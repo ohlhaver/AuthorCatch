@@ -1,0 +1,21 @@
+
+<div class='news_block'>
+  <h2> 
+
+    <span class = "page_label"><%= link_to  t("navigation.main.#{block.name}"), section_path( block.id ) %></span>
+
+  </h2>
+  <% if block.opinions? %>
+    <% block.stories.each do |story| %>
+      <div class='cluster'>
+        <%= render_story_search_preview( story ) %>
+      </div>
+    <% end %>
+  <% else %>
+    <% block.clusters.each do |cluster| %>
+      <div id='cluster_<%= cluster.id -%>' class='cluster'>
+        <%= render_cluster_preview( cluster ) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

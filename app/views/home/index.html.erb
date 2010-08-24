@@ -1,0 +1,25 @@
+
+
+<div class='news_group'>
+  <div class='news_block'>
+	
+	<% if current_user.new_record? %>
+    
+	 <h2><span class="page_label"><%= t("navigation.main.#{@section.name}")%></span></h2>
+	<%else%>
+	<h2><span class="page_label"><%= 'Home' %></span></h2>
+<%end%>
+      <% @stories.each do |story| %>
+        <div class='medium_cluster'>
+          <%= render_story_search_preview( story ) %>
+        </div>
+      <% end %>
+      <% if @stories.empty? %>
+        <br>
+        <h2><span><%= t('stories.not.found')%></span></h2>
+      <% end %>
+    
+  </div>
+</div>
+<%= render_pagination( @section ) %>
+

@@ -1,0 +1,32 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <% if @cluster.stories.empty? %>
+        <%= t('cluster.not.found') %>
+      <% else %>
+        <span class="page_label"><%= t("cluster.all.stories") -%></span>
+		<%= render_cluster_preference_form( :cluster_sort_criteria, :form_url => cluster_path( @cluster ), :form_method => :get  ) -%>
+		<div class='keywords_filter'>
+       		(<%= links_to_keywords( *(@cluster.top_keywords) ).join(' - ') %>)
+   		</div>
+		</h2>
+		
+        <div class='result_filter'>
+          <%= render_filter_links( @cluster, cluster_path( @cluster ), :get ) -%>	
+        </div>
+
+      <% end %>
+    <% @cluster.stories.each do |story| %>
+    <div class='medium_cluster'>
+    <div class='medium_headline'>
+      <%= render_headline_preview( story ) %>
+    </div>
+    </div>
+    <% end %>
+	<% if @cluster.stories.empty? %>
+    	<br>
+       <h2><span><%= t('stories.not.found')%></span></h2>
+    <% end %>
+  </div>
+</div>
+<%= render_pagination( @cluster ) %>

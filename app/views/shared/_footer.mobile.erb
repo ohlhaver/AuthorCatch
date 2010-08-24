@@ -1,0 +1,13 @@
+<div class="footer_module" class="grid_6"></div>
+
+  <%= link_to t( 'navigation.bottom.about' ), about_path %> -
+<%= link_to 'Blog', 'http://jurnalo.typepad.com/' %> -
+<%= link_to 'Facebook', 'http://www.facebook.com/pages/Jurnalo/104940249561877' %> -
+<%= link_to 'Twitter', 'http://twitter.com/jurnalo' %> -
+  <%= link_to t( 'navigation.bottom.privacy' ), privacy_path %> -
+  <%= link_to t( 'navigation.bottom.imprint' ), imprint_path %> -
+  <%= link_to t( 'navigation.bottom.contact' ), account_path( :action => 'contact', :jar => logged_in? ? 1 : 0 ) %>
+
+
+<br>
+  <span class= "grey">&copy; 2010</span>

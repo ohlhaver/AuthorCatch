@@ -1,0 +1,26 @@
+<%= content_block_clearfix %>
+<% reset_content_block_clearfix %>
+<% mouse_over( :dialog ) do |dialogEventClass, dialogItemClass| %>
+<div class='news_block <%= dialogEventClass -%>'>
+  <h2>    
+    <span class='dialogBox <%= dialogItemClass%>'>
+      <% #Hide functionality is not available for now %>
+      <% #link_to( t('prefs.home_action.hide'), hide_section_path( :id => block.id ) ) %>
+      <%= link_to( image_tag('up.gif'), up_section_path( :id => block.id ) ) %> 
+      <%= link_to( t('prefs.home_action.up'), up_section_path( :id => block.id ) ) if one_column_layout? %>&nbsp;&nbsp;
+      
+      <%= link_to( image_tag('down.gif'), down_section_path( :id => block.id ) ) %> 
+      <%= link_to( t('prefs.home_action.down'), down_section_path( :id => block.id ) ) if one_column_layout? %>
+    </span>
+	<span class ="page_label"><%= link_to  t("navigation.main.#{block.name}"), section_path( block.id ) %></span>
+  </h2>
+  <% block.clusters.each do |cluster| %>
+    <div id='cluster_<%= cluster.id -%>' class='cluster <%= content_block_position %>'>
+      <%= render_cluster_preview( cluster ) %>
+    </div>
+    <%= content_block_clearfix %>
+  <% end %>
+</div>
+<% end %>
+<%= content_block_clearfix %>
+<% reset_content_block_clearfix %>

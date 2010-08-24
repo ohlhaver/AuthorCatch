@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title><%= @story.title %><%=  ( " - " + @story.source.name ) if @story.source %></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=0.9; maximum-scale=0.9; user-scalable=0;" />
+    <style>
+      html{height:100%}
+      body{margin:0;font:75% arial,sans-serif;height:100%;overflow:hidden}
+      a,a:visited{color:#00c}
+      div{font-size:130%}
+      ul#bar{ clear:both; padding:0;}
+      ul#bar li{ float:left; list-style:none; list-style-position:inside; font-size:120%;}
+      ul#bar li.story{ padding-left: 50px;}
+      ul#bar li span.heading{ font-family:Arial,Helvetica,sans-serif;text-transform:uppercase; font-size:110%; display:block; padding-bottom:5px; }
+      ul#bar li span.stories { display:block; padding-top:4px; max-width: 760px;}
+      ul#bar li span.stories span.item { display:block; padding-top:5px;}
+      ul#bar li a,a:visited{ color:#333333; text-decoration:none; font-family:Arial,Helvetica,sans-serif;}
+      ul#bar li.story a,a:visited{ font-family:Georgia,"Times New Roman",Times,serif}
+      ul#bar li.right{ float:right; }
+      ul#bar li a.more{ color:#333333; font-family:Arial,Helvetica,sans-serif; padding-top:5px; font-size:110%; font-weight:bold; display:block;}
+      ul#bar li span.grey a { color:#999999; }
+      #details{float:left;margin-top:10px}
+      #details p{padding:0;margin:0 0 2px}
+      img{border:none;padding-top:4px;}
+      #outer-separator{clear:both;width:100%;border-top: 7px solid #99CCFF;margin:10px 0 0;padding:0;font-size:1px;overflow:hidden}
+      #separator{background:#eaeaea;height:3px}
+      table{font-size:100%}
+      .ds,.lsbb{display:inline}
+      /*Safari Hack*/
+      @media screen and (-webkit-min-device-pixel-ratio:0) {  
+        ul#bar li.story{ padding-left: 50px; padding-bottom:7px; }
+        ul#bar li.right{ float:right; padding-right: 7px; }
+      }
+    </style>
+  </head>
+  <body>
+    <table height="100%" cellspacing="0" cellpadding="0" width="100%">
+      <tr style="height:1%">
+        <td style="padding-left:10px; padding-top:5px">
+          <ul id="bar">
+            <li><%= link_to( image_tag( 'logo.gif'), root_path ) %></li>
+            <li class="story">
+              <% if @related_stories %>
+                <span class='stories'>
+                <% @related_stories.each do |story| %>
+                  <span class='item'>
+                    <%= link_to( story.title, story_path( @related_story_params.merge( :id => story.to_param ) ) ) %> 
+                    <% if story.source %>
+                    <span class='grey'> - <%= link_to( story.source.name, source_path( story.source ) ) %></span>
+                    <% end %>
+                    <% if story.authors.any? %>
+                      <% story.authors.each do |author| %>
+                      - <span class='grey'><%= link_to( author.name, author_path( author ) ) %></span>
+                      <% end -%>
+                    <%end %>
+                  </span>
+                <% end %>
+                </span>
+                <%= link_to( t('more.related.stories') + ' &raquo;', @more_results_url, :class => 'more' )%>
+              <% end %>
+            </li>
+            <li class="right"><a href="<%= @story.url %>"><%= image_tag('close.gif') %></a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id=outer-separator><div id=separator></div></div>
+          <iframe scrolling="auto" id="rf" src="<%= @story.url -%>" frameborder="0" allowtransparency="true" style="width:100%;height:100%"></iframe>
+        </td>
+      </tr>
+    </table>
+    <script>var a = document.getElementById('rf');a && a.contentWindow && a.contentWindow.focus();</script>
+	<script type="text/javascript">
+	    try {
+	      var pageTracker = _gat._getTracker("UA-6270445-1");
+	      pageTracker._setDomainName(".jurnalo.com");
+	      pageTracker._trackPageview();
+	    } catch(err) {}
+	  </script>
+  </body>
+</html>

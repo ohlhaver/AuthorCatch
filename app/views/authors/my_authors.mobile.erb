@@ -1,0 +1,35 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <span class="page_label"><%= t('navigation.main.my_authors') %> </span></h2>
+		<br>
+      <div class='result_filter'> <%= render_my_author_link( 'author.stories.label', :stories, my_authors_path ) %> 
+        <%= render_my_author_link( 'author.list.label', :authors, my_authors_path( :list => 1 ) ) %> </div>
+    
+    <h4>
+
+      <div class = "result_filter">
+		<%= render_author_filter_links( my_authors_path( :list => 1 ) ) %>
+		</div>
+    </h4>
+
+ 
+ <% @author_prefs.each do |author_pref| %>
+<div class = "my_authors_block"></div>
+		<h2>
+          <div class='listed_rater'> 
+            <%= render_author_subscription( author_pref, author_pref.author ) %>
+          
+            <%= render_author_rating_form( author_pref, author_pref.author ) %>
+          </div>
+		  <%= render_author_preview( author_pref.author ) %>
+		</h2>
+		 
+    <% end %>
+	
+    <% if @author_prefs.empty? %>
+      <em><%= t( 'authors.not.found' ) %></em>
+    <% end %>
+  </div>
+</div>
+<% # render_pagination( @authors ) %>

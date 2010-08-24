@@ -1,0 +1,14 @@
+<% content_for :custom_javascript do %>
+  <script type='text/javascript'>
+    function make_topic_click() {
+      var form = $('search_topic_form');
+      form.submit();
+    }
+  </script>
+<% end %>
+<% form_tag( topics_path, :method => :post, :id => 'search_topic_form', :class => 'inline_form' ) do %>
+  <% @topic_params.each do | param, value | %>
+    <%= hidden_field_tag( "japi_topic_preference[#{param}]", value ) %>
+  <% end %>
+  <%= link_to_function t('search.topic.add'), 'make_topic_click();' %>
+<% end %>

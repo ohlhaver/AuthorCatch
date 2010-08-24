@@ -1,0 +1,108 @@
+	<div class = "thin_results_module"></div>
+ 
+   <div class= 'adv_search_lines'>
+     	<% form_for( @topic, :url => topics_path, :html => { :id => 'advance_topic_form' }, :method => :post ) do |f| %>
+		  <%= f.error_messages %>
+		
+		<div id = "topic_label"> 
+				<span><%= t('topic.name') -%> </span> 
+		    <span><%= f.text_field(:name, :id => "adv_searchfield" ) %></span>
+	
+       </div>
+
+		<div class = "thin_results_module"></div>
+
+         <%= t('search.advance.find.label') -%>
+          
+			<div>
+            <span><%= t('search.advance.find.at_least') -%></span>
+            <span><%= f.text_field(:search_any, :id => "adv_searchfield") %></span>
+            </div>
+          <div>
+            <span ><%= t('search.advance.find.all') -%></span>
+            <span><%= f.text_field(:search_all, :id => "adv_searchfield") %></span>
+          </div>
+          <div>
+            <span><%= t('search.advance.find.exact') -%></span>
+            <span><%= f.text_field(:search_exact_phrase, :id => "adv_searchfield") %></span>
+          </div>
+          <div>
+            <span><%= t('search.advance.find.without') -%></span>
+            <span><%= f.text_field(:search_except, :id => "adv_searchfield") %></span>
+          </div>
+         
+       
+
+		<div class = 'form_area'>
+          <div> 
+			<%= t('search.advance.sorting') -%>		
+			<span class='adv_search_menu'>
+           <%= f.select( :sort_criteria, preference_options(:sort_criteria) ) %></span>
+          </div>
+          <div>
+           	<%= t('search.advance.timespan') -%>	<span class='adv_search_menu'>
+            <%= f.select( :time_span, preference_options(:time_span) ) %></span>
+          </div>
+		</div>
+	
+       
+	  <div class = "thin_results_module"></div>
+         <%= t('search.advance.filter.label') -%>
+          <div>
+            <%= t('search.advance.filter.source') -%><span class='adv_search_menu'>
+              <%= source_auto_complete_field( 'topic', 'source_id', @topic.source ) %>
+            </span>
+          </div>
+        <div>
+            <%= t('search.advance.filter.author') -%><span class='adv_search_menu'>
+              <%= author_auto_complete_field( 'topic', 'author_id', @topic.author ) %>
+            </span>
+          </div>
+	<div class = 'form_area'>
+          <div>
+            <%= t('search.advance.filter.region') -%><span class='adv_search_menu'>
+            <%= f.select( :region_id, preference_options(:region, :include_blank => true) ) %></span>
+          </div>
+          <div>
+          <%= t('search.advance.filter.category') -%><span class='adv_search_menu'>
+            <%= f.select(:category_id, preference_options(:category, :include_blank => true ) ) %></span>
+          </div>
+          <div>
+            <%= t('search.advance.filter.subscription') -%><span class='adv_search_menu'>
+            <%= f.select( :subscription_type, preference_options(:subscription_type) ) %></span>
+          </div>
+		</div>
+       <div class = "thin_results_module"></div>
+          <%= t('search.advance.preferences.label') -%>
+		<div class = 'form_area'>
+          <div>
+            <%= t('search.advance.preferences.video') -%>
+            <span><%= f.select(:video, preference_options(:video_pref) ) %></span>
+          </div>
+          <div>
+            <%= t('search.advance.preferences.opinion') -%>
+            <span><%= f.select(:opinion, preference_options(:opinion_pref) ) %></span>
+          </div>
+          <div>
+            <%= t('search.advance.preferences.blog') -%>
+            <span><%= f.select(:blog, preference_options(:blog_pref) ) %></span>
+          </div>
+		</div>
+
+
+       
+		
+		<%= submit_tag( t('topic.action.add'), :class => "adv_searchbutton" ) %><br>
+		  <%= hidden_field_tag( :advance, 1, :id => 'advance_topic_field' ) %>
+		  <%= link_to_function( t('topic.action.simple'), "simple_topic( 'advance_topic_form' )" ) %> | 
+		  <%= link_to_function( t('topic.action.test'), "test_topic( 'advance_topic_form' )"  ) %>
+
+
+      <% end %>
+	</div>
+
+
+
+
+
+

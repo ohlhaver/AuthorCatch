@@ -1,0 +1,52 @@
+/* Float percentages fix when nesting one grid inside the other */
+.container_10 .grid_8 .grid_4{
+  width:48.0%;
+}
+.container_10 .grid_8 .grid_4.omega {
+  width:49.0%;
+}
+.container_10 .grid_8 .grid_4.alpha {
+  width:49.0%;
+}
+.container_10 .grid_8 .grid_4 .grid_1 {
+  width:23.0%;
+}
+.container_10 .grid_8 .grid_4 .grid_1.alpha {
+  width:24.0%;
+}
+.container_10 .grid_8 .grid_4 .grid_1.omega {
+  width:24.0%;
+}
+.container_10 .grid_8 .grid_4 .grid_3 {
+  width:73%;
+}
+.container_10 .grid_8 .grid_4 .grid_3.alpha {
+  width:74%;
+}
+.container_10 .grid_8 .grid_4 .grid_3.omega {
+  width:74%;
+}
+.container_10 .grid_8 .grid_1 {
+  width:10.5%;
+}
+.container_10 .grid_8 .grid_1.alpha {
+  width:11.5%;
+}
+.container_10 .grid_8 .grid_1.omega {
+  width:11.5%;
+}
+.container_10 .grid_8 .grid_7 {
+  width:85.5%;
+}
+.container_10 .grid_8 .grid_7.alpha{
+  width:86.5%;
+}
+.container_10 .grid_8 .grid_7.omega{
+  width:86.5%;
+}
+.container_10 .grid_8 .grid_1.alpha.image {
+  width:80px;
+}
+.container_10 .grid_8 .grid_4 .grid_1.alpha.image {
+  width:80px;
+}

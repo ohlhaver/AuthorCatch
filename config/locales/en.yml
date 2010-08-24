@@ -1,0 +1,419 @@
+en:
+  activerecord:
+    errors:
+      template:
+        header: "Oops! That did not work!"
+        body: "There were errors submitting your form:"
+  activeresource:
+    errors:
+      models:
+        attribute:
+          restricted: "need to be upgraded"
+          required: "must be given"
+          blank: "must be given"
+          accepted: "must be accepted"
+          confirmation: "does not match its confirmation"
+          empty: "must be given"
+          equal_to: "must be equal to {{count}}"
+          even: "must be even"
+          exclusion: "is not available"
+          greater_than: "must be greater than {{count}}"
+          greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+          inclusion: "is not included in the list"
+          invalid: "is not valid"
+          invalid_login: "is not valid. Your user name can not include a period"
+          invalid_url: "is not valid, you must type it as http://www.somesite.com"
+          less_than: "must be less than {{count}}"
+          less_than_or_equal_to: "must be less than or equal to {{count}}"
+          not_a_number: "is not a number"
+          odd: "must be odd"
+          taken: "is not available"
+          too_long: "is too long (no more than {{count}} characters)"
+          too_short: "is too short (no less than {{count}} characters)"
+          wrong_length: "is not the right length (must be {{count}} characters)"
+  datetime:
+    distance_in_words:
+      half_a_minute: 'half a minute ago'
+      less_than_x_seconds:
+        zero: 'less than 1 second ago'
+        one: '1 second ago'
+        other: '{{count}} seconds ago'
+      x_seconds:
+        one: '1 second ago'
+        other: '{{count}} seconds ago'
+      less_than_x_minutes:
+        zero: 'less than a minute ago'
+        one: '<span class = "fresh">1 minute ago</span>'
+        other: '<span class = "fresh">{{count}} minutes ago</span>'
+      x_minutes:
+        one: '<span class = "fresh">1 minute ago</span>'
+        other: '<span class = "fresh">{{count}} minutes ago</span>'
+      about_x_hours:
+        one: '<span class = "fresh">about 1 hour ago</span>'
+        other: '{{count}} hours ago'
+      x_days:
+        one: '1 day ago'
+        other: '{{count}} days ago'
+      about_x_months:
+        one: 'about 1 month ago'
+        other: '{{count}} months ago'
+      x_months:
+        one: '1 month ago'
+        other: '{{count}} months ago'
+      about_x_years:
+        one: 'about 1 year ago'
+        other: '{{count}} years ago'
+      over_x_years:
+        one: 'over 1 year ago'
+        other: '{{count}} years ago'
+  account:
+    current: 'Current Plan'
+    upgrade: 'upgrade to'
+    downgrade: 'downgrade to'
+    basic:
+      label: Jurnalo Basic Account
+      info: "One personal topic, one author subscription and one source setting."
+      cost: free
+    power:
+      label: "<b>Jurnalo Power Account</b>"
+      info: "Unlimited personal topics, author subscriptions and source settings."
+      cost: "5 € monthly"
+  jurnalo:
+    login:
+      fb_button: "Login"
+    about:
+      label: "About AuthorCatch"
+      you_can: "With AuthorCatch you can"
+      browse_news: "browse the news"
+      search_news: "search the news"
+      subscribe_author: "subscribe to any author"
+      weight: "weight authors and sources"
+      create_topic: "create your own topics"
+      add_to_reading_list: "save interesting articles to your reading list"
+      topics: "Jurnalo's selection of topics on the homepage is fully automated.<br> It shows which news topics have been covered by the greatest number of different publications over the last 12 hours and is updated every minute."
+      ranking: "The ranking of articles in the search results is based on a combination of relevance, age and automatically estimated journalistic quality."
+      selection: "The selection and weighting of sources is based on the sole criteria of journalistic quality."
+      credits: "Special thanks go out to the following people without whose open-source contributions this application would not have been possible"
+      search_tech: "search technology"
+    imprint:
+      label: 'Imprint'
+      tel: 'Telephone'
+      md: "Managing director: Justus Ohlhaver (same address as above)"
+      rstv: "Justus Ohlhaver (same address as above) is responsible for the content in accordance with § 55 - 2 RStV."
+      registry: "Registry"
+      ust_id: "Ust-ID-Nr."
+      disclaimer: "Disclaimer: <br> We are not responsible for the content of any external links.<br> The responsiblity for any of the content of any of the pages we are linking to belongs exclusively to the owners of the pages we are linking to."
+    privacy:
+      label: "Privacy policy"
+      collects: "AuthorCatch collects personal information when you register or when you provide such information voluntarily."
+      cookies: "We use cookies and other technologies to find out how you use AuthorCatch."
+      accesses: "AuthorCatch accesses information automatically when you visit our site. This information includes URL, IP-address, browser-type, language as well as date and time of your visit."
+      dont_passes: "We don't pass on personal information to any third party without your explicit approval."
+      summarizes: "Only summarized de-personalized information is provided to third parties."
+      uses: "Personal information is used for providing services requested by the user including services with personalized content."
+      researches: "Additionally, we use your personal information for internal research in order to improve your online experience as well as our technologies and services."
+    power:
+      label: "Jurnalo Power Account"
+      slogan: "The Jurnalo Power Account enables you to enjoy the best possible news reading experience."
+      gives: "The Jurnalo Power Account gives you all the functions of the Basic Account, plus:"
+      topics: "- unlimited search topics"
+      authors: "- unlimited author subscriptions"
+      sources: "- unlimited source settings"      
+      cancel: "Payment is month-to-month. If you cancel you’ll be billed only for the current month."
+    upgrade:
+      required: "Account Upgrade Required"
+      reason_: "Please upgrade to Jurnalo Power Account for unlimited access."
+      reason_1: "To create more than one topic please upgrade to the Jurnalo Power Account."
+      reason_2: "To rate more than one source please upgrade to the Jurnalo Power Account."
+      reason_3: "To rate/subscribe to more than one author please upgrade to the Jurnalo Power Account."
+    wizard:
+      title: 'New to AuthorCatch?'
+      create_topic: "Create your first personal topic now with Jurnalo!"
+      subscribe_author: "Catch all articles by your favorite authors!"
+      rate_source: "Rate your first news publication now with Jurnalo!"
+      reading_list: "Save interesting articles to your reading list now with Jurnalo!"
+      whats_that: "What's that?"
+      free_signup: "or {{link}}"
+      fb_login: "{{link}}"
+      do_not_show_again: "Do not show this again."
+  author:
+    like:
+      info: "Prefer articles by this author"
+      by_you: "You prefer articles by this author."
+    dislike:
+      info: "Don't prefer articles by this author"
+      by_you: "You don't prefer articles by this author."
+    action:
+      subscribe: 'catch'
+      unsubscribe: 'uncatch'
+      search_here: 'Find authors here!'
+    not:
+      found: "Author not found."
+    stories:
+      label: "Headlines"
+    list:
+      label: "List of Authors"
+    filter:
+      all: 'All'
+      subscribed: 'Subscribed'
+      rated: 'Weighted'
+  authors:
+    what:
+      label: "Start catching your favourite authors!"
+    subscribe:
+      why: "Track all your favorite authors' new articles from any publication."
+      howto: "How to <b>catch</b> an author:"
+      step_1: "Click the name of any author."
+      step_2: "Click <b>'catch'</b> next to the authors name!"
+    search:
+      label: "Search author"
+      info: "Search for your favourite authors:"
+    top_list:
+      label: "List of the currently most popular authors"
+      browse: "These are the most popular authors:"
+    not:
+      found: "No authors found"
+  cluster:
+    all:
+      blogs: 
+        one: "1 blog"
+        other: "{{count}} blogs"
+      headlines: 
+        one: "all 1 headline" 
+        other: "all {{count}} headlines"
+      opinions: 
+        one: "1 opinion"
+        other: "{{count}} opinions"
+      stories: "Related stories"
+      videos: 
+        one: "1 video"
+        other: "{{count}} videos"
+      label: "all"
+    not:
+      found: "Group not found."
+  edition:
+    other: "other news edition"
+  navigation:
+    bottom:
+      about: "About AuthorCatch"
+      feedback: "Feedback"
+      imprint: "Imprint"
+      privacy: "Privacy"
+      contact: "Contact"
+    main:
+      back_to_home: "back to home"
+      add_section: "Add Section"
+      add_topic: "Add Topic"
+      business: "Business"
+      culture: "Culture"
+      mixed: "Mixed"
+      my_authors: "My Authors"
+      my_topics: "My Topics"
+      my_topic: "My topic"
+      opinions: "Popular authors"
+      politics: "Politics"
+      sections: "Sections"
+      science: "Science"
+      sport: "Sport"
+      technology: "Technology"
+      top_stories: "Top Stories"
+      top_authors: "Top Authors"
+    top:
+      help: "Help"
+      login: "Login"
+      logout: "{{name}} (logout)"
+      reading_list: "Reading list"
+      register: "Sign up"
+      settings: "Settings"
+      upgrade: "Upgrade"
+      renew: "Renew"
+  pagination:
+    previous: "previous"
+    next: "next"
+  prefs:
+    labels: 
+      rate: 'weight:'
+    home_action:
+      edit: 'edit'
+      show: 'show'
+      hide: 'hide'
+      delete: 'remove'
+      up: 'move up'
+      down: 'move down'
+    edition:
+      int: 'International'
+      de: 'Deutschland'
+      at: 'Österreich'
+      ch: 'Schweiz'
+      in: 'India'
+      us: 'U.S.'
+      gb: 'U.K.'
+      sg: 'Singapore'
+    country:
+      int: 'Global'
+      de: 'Germany'
+      at: 'Austria'
+      ch: 'Switzerland'
+      in: 'India'
+      us: 'U.S.'
+      gb: 'U.K.'
+      sg: 'Singapore'
+    val:
+      nil: 'not weighted'
+      none: 'ignore'
+      ban: 'ignore'
+      low: 'low'
+      medium: 'medium'
+      neutral: 'neutral'
+      high: 'high'
+      only: 'only'
+    label:
+      remove: 'remove'
+      add_to_reading_list: 'add to my reading-list'
+    category:
+      politics: 'Politics'
+      business: 'Business'
+      culture: 'Culture'
+      science: 'Science'
+      technology: 'Technology'
+      sport: 'Sport'
+      mixed: 'Mixed'
+      opinions: 'Popular authors'
+    sort:
+      relevance: "relevance"
+      time: "time"
+      cluster: 
+        relevance: "relevance as groups"
+        time: "time as groups"
+    subscription:
+      all: "all articles"
+      free: "only free articles"
+      no_login: "only login-free articles"
+    time_span:
+      last_hour: 'last hour'
+      last_day: 'last day'
+      last_week: 'last week'
+      last_month: 'last month'
+  search:
+    page:
+        title: "Search results for: {{query}}"
+        authors: "Authors:"
+        sources: "Publications:"
+        articles: "Articles"
+    results:
+      per_page: "show {{count}} results per page"
+      sorting: "sort by:"
+    topic:
+      add: "add to My Topics"
+    simple: "search authors"
+    simple_mobile: "search"
+    advance: 
+      label: "Advanced search"
+      find: 
+        label: "Find results"
+        at_least: "with at least one of these words:"
+        all: "with all these words:"
+        exact: "with the exact phrase:"
+        without: "without these words:"
+      sorting: "Sort by:"
+      timespan: "Timespan:"
+      filter: 
+        label: "Filter"
+        source: "Publication:"
+        author: "Author:"
+        region: "Region:"
+        category: "Section:"
+        subscription: "Subscription:"
+      preferences: 
+        label: "Preferences"
+        video: "Videos:"
+        opinion: "Opinions:"
+        blog: "Blogs:"
+  source:
+    like:
+      info: "Prefer articles by this publication"
+      by_you: "You prefer this publication."
+    dislike:
+      info: "Don't prefer articles by this publication"
+      by_you: "You don't prefer this publication."
+    what:
+      label: "Source Rating"
+    action:
+      rate_here: "Rate sources here!"
+    rating:
+      howto: "Instructions:"
+      step_1: "Click the name of the source."
+      step_2: "Select a rating on the upper right:"
+      what: "You can rate any publication by giving it one of the following ratings:"
+      values: "'not rated', 'ignore', 'low', 'medium' or 'high'"
+      personalized_results: "This rating determines the ranking in your search results."
+      not_rated_info: "For 'not rated' the default rating is used. The latter is determined by the average rating by all users."
+      rated_sources: "In 'settings > my sources' you can find a list of all sources that you have rated."
+    not:
+      found: "Source not found."
+  stories:
+    this: "This article"
+    not:
+        found: "No articles found."
+        found_for_query: "No articles found for {{query}}."
+  seo:
+    page:
+      default_title: "AuthorCatch - Catch your favourite authors!"
+      title:
+        author: "Articles by {{name}} - AuthorCatch"
+        cluster_group: "{{name}} - AuthorCatch"
+        my_author: "My Authors - AuthorCatch"
+        opinions: "Opinions on {{query}} - AuthorCatch"
+        reading_list: "Reading list - AuthorCatch"
+        search: "{{query}} - AuthorCatch"
+        videos: "Videos on {{query}} - AuthorCatch"
+  reading_list:
+    what:
+      label: 'Save articles to your reading list'
+    action:
+      howto: "How do I do this?"
+    add:
+      why: "With the reading list you can save articles for later reading."
+      why_2: "The links to these articles will remain you reading list until you delete them."
+      howto: "Intstructions:"
+      step_1: "Move your mouse over the headline."
+      step_2: "Click the plus symbol.'"
+      step_3: "Click 'add to my reading list.'"
+  topic:
+    label:
+      new: 'New Topic'
+      what: 'Create a search topic'
+    action:
+      add: 'Add Topic'
+      test: 'test'
+      advance: 'Advanced'
+      simple: 'Simple'
+      create: 'Create!'
+      create_topic: 'Create Topic'
+      advance_topic: 'advanced'
+      advance_topic_info: '{{link}}'
+    name: 'Topic label:'
+    query: 'Search query:'
+    what:
+      info: "Get news search results for any search term."
+      feature: "They will be displayed on your homepage or sent as e-mail alerts."
+  rate:
+    source: 'Source preference'
+    author: 'Author preference'
+  more:
+    info: "more info"
+    related:
+      stories: "all {{count}} related stories"
+  frame:
+    back: "back"
+  stars:
+    info:
+      author: 
+        zero: "This author has no ratings yet."
+        one: "{{percent}}% of the users prefer this author."
+        other: "{{percent}}% of the users prefer this author."
+      source:
+        zero: "This publication has no ratings yet."
+        one: "{{percent}}% of the users prefer this publication."
+        other: "{{percent}}% of the users prefer this publication."
+        

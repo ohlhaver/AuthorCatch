@@ -1,0 +1,12 @@
+<div class='clearfix'>
+<% if @content_column_count == 2 %>
+  <div class='grid_1 alpha image'>
+<%else%>
+<div class='grid_1 alpha image'>
+
+<%end%>
+
+    <a href='<%= url -%>'><img src='<%= image -%>' alt='' /></a>
+  </div>
+  <div class='<%= story_block_with_image_position %>'><%= content %></div>
+</div>

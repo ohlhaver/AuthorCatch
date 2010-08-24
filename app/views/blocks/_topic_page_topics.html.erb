@@ -1,0 +1,31 @@
+<% mouse_over( :dialog ) do | dialogEventClass, dialogItemClass | %>
+<% if block.stories.any? %>
+<div class='topic_preview_block <%= dialogEventClass -%>'>
+		
+  <h2>
+	 <span class='dialogBox <%= dialogItemClass -%>'>
+       <% #link_to( t( 'prefs.home_action.hide' ), hide_topic_path( :id => block.id ) ) %>       
+		<%= link_to( image_tag('up.gif'), up_topic_path( :id => block.id ) ) %>
+		<%= link_to( t( 'prefs.home_action.up' ), up_topic_path( :id => block.id ) ) %>
+		&nbsp;&nbsp;
+		<%= link_to( image_tag('down.gif'), down_topic_path( :id => block.id ) ) %>
+      <%= link_to( t( 'prefs.home_action.down' ), down_topic_path( :id => block.id ) ) %>
+		&nbsp;&nbsp;
+		<%= link_to( image_tag('close.gif'), topic_path( :id => block.id ), :method => :delete, :confirm => 'Are you sure?' ) %> 
+	    <%= link_to( t( 'prefs.home_action.delete' ), topic_path( :id => block.id ), :method => :delete, :confirm => 'Are you sure?' ) %>
+    </span>
+	<span class="page_label"><%= link_to block.name, topic_path( block.id ) %></span>
+ </h2>
+  <% block.stories.each do |story| %>
+   <div class='cluster'>
+      <% if story.cluster && story.cluster.stories.any? %>
+		 
+        <%= render_cluster_preview( story.cluster, story ) %>
+      <% else %>
+        <%= render_story_search_preview( story ) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<% end %>
+<% end %>

@@ -1,0 +1,18 @@
+<div class='news_block'>
+<h2><span class="page_label"><%= t( 'jurnalo.upgrade.required' ) %></span></h2>
+<div class = "about">
+  <%= t("jurnalo.upgrade.reason_#{params[:id]}") %> <br/><br/>
+  
+  <h2><span class="page_label"><%= t('account.upgrade') %></span></h2>
+  
+  <div class = "about">
+    <h2> <b><%= link_to t('account.power.label'), account_path( :action => :power_plan ) %></b> (<%= t('account.power.cost') -%>)<br>
+    <%= t('account.power.info') %> (<%= link_to t('more.info'), account_path( :action => :power_plan ) %>)</h2>
+  </div>
+  
+  <% form_tag account_path( :action => :upgrade ), :method => :get do %>
+    <%= submit_tag "Upgrade", :class => "confirmation_button" %>
+  <%end%>
+
+</div>
+</div>

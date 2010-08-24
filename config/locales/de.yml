@@ -1,0 +1,418 @@
+de:
+  activerecord:
+    errors:
+      template:
+        header: "Oops! Das hat nicht ganz geklappt!"
+        body: "Bitte überprüfe die folgenden Felder:"
+  activeresource:
+    errors:
+      models:
+        attribute:
+          restricted: "müssen aufgerüstet werden"
+          required: "muss gegeben sein"
+          blank: "muss gegeben sein"
+          accepted: "muss akzeptiert werden"
+          confirmation: "stimmt nicht mit der Bestätigung überein"
+          empty: "muss gegeben sein"
+          equal_to: "muss gleich sein mit {{count}}"
+          even: "muss gerade sein"
+          exclusion: "ist nicht verfügbar"
+          greater_than: "muss größer sein als {{count}}"
+          greater_than_or_equal_to: "muss größer sein als oder gleich sein mith {{count}}"
+          inclusion: "ist nicht Bestandteil der Liste"
+          invalid: "ist ungültig"
+          invalid_login: "ist leider nicht gültig. Bitte verwende nur Buchstaben, Zahlen und Unterstrich für Deinen Usernamen. Sorry!"
+          invalid_url: "ungültige URL; bitte im Format http://www.website.de eingeben"
+          less_than: "muss kleiner sein als {{count}}"
+          less_than_or_equal_to: "muss kleiner sein als oder gleich sein mit {{count}}"
+          not_a_number: "ist keine Zahl"
+          odd: "muss ungerade sein"
+          taken: "ist nicht verfügbar"
+          too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
+          too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+          wrong_length: "hat nicht die richtige Länge (muss {{count}} Zeichen haben)"          
+  datetime:
+    distance_in_words:
+      half_a_minute: 'vor einer halbe Minute'
+      less_than_x_seconds:
+        zero: 'vor weniger als 1 Sekunde'
+        one: 'vor 1 Sekunde'
+        other: 'vor {{count}} Sekunden'
+      x_seconds:
+        one: 'vor 1 Sekunde'
+        other: 'vor {{count}} Sekunden'
+      less_than_x_minutes:
+        zero: '<span class = "fresh">vor weniger als 1 Minute</span>'
+        one: '<span class = "fresh">vor 1 Minute</span>'
+        other: '<span class = "fresh">vor {{count}} Minuten</span>'
+      x_minutes:
+        one: '<span class = "fresh">vor 1 Minute</span>'
+        other: '<span class = "fresh">vor {{count}} Minuten</span>'
+      about_x_hours:
+        one: '<span class = "fresh">vor etwa 1 Stunde</span>'
+        other: 'vor {{count}} Stunden'
+      x_days:
+        one: 'vor 1 Tag'
+        other: 'vor {{count}} Tagen'
+      about_x_months:
+        one: 'vor etwa 1 Monat'
+        other: 'vor {{count}} Monaten'
+      x_months:
+        one: 'vor 1 Monat'
+        other: 'vor {{count}} Monaten'
+      about_x_years:
+        one: 'vor etwa 1 Jahr'
+        other: 'vor {{count}} Jahren'
+      over_x_years:
+        one: 'mehr als 1 Jahr'
+        other: 'vor {{count}} Jahren'
+  account:
+    current: 'Jetziger Plan'
+    upgrade: 'Upgrade zu'
+    downgrade: 'Downgrade zu'
+    basic:
+      label: "Jurnalo Basis Plan" 
+      info: "Ein eigenes Thema, ein Autoren-Abonnement und eine Quellen-Einstellung."
+      cost: gratis
+    power:
+      label: "<b>Jurnalo Power Plan</b>"
+      info: "Unbegrenzte Anzahl von eigenen Themen, Autoren-Abonnements und Quellen-Einstellungen."
+      cost: "5 € monatlich"
+  jurnalo:
+    login:
+      fb_button: "Anmelden"
+    about:
+      label: "Über AuthorCatch"
+      you_can: "Mit AuthorCatch können Sie"
+      browse_news: "in den Nachrichten blättern"
+      search_news: "Nachrichten suchen"
+      subscribe_author: "Autoren abonnieren"
+      weight: "Autoren und Quellen gewichten"
+      create_topic: "eigene Themen erschaffen"
+      add_to_reading_list: "interessante Artikel zu Ihrer Leseliste speichern"
+      topics: "AuthorCatchs Auswahl von Themen geschieht vollkommen automatisch. <br> Sie zeigt zu welchen Nachrichten die meisten Publikationen in den letzten 12 Stunden etwas veröffentlicht haben und wird jede Minute aktualisiert."
+      ranking: "Das Ranking der Artikel in den Suchergebnissen basiert ausschließlich auf der Kombination aus Relevanz, Aktualität und automatisch geschätzter journalistischer Qualität."
+      selection: "Für die Auswahl und Gewichtung der Quellen ist deren objektiv errechnete journalistische Qualität das ausschließliche Kriterium."
+      credits: "Dank gilt insbesondere den folgenden Personen, ohne deren open-source Beiträge diese Seite nicht möglich wäre"
+      search_tech: "Suchtechnologie"
+    imprint:
+      label: 'Impressum'
+      tel: 'Telefon'
+      md: "Vertretungsberechtigt: Justus Ohlhaver (Anschrift wie oben)"
+      rstv: "Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV: Justus Ohlhaver (Anschrift wie oben) "
+      registry: "Handelsregister"
+      ust_id: "Umsatzsteueridentifikationsnummer"
+      disclaimer: "Haftungshinweis: <br> Wir übernehmen keine Haftung für die Inhalte externer Links.<br> Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
+    privacy:
+      label: "Datenschutz"
+      collects: "AuthorCatch sammelt persönliche Informationen, wenn Sie sich registrieren oder anderweitig derartige Informationen freiwillig bereitstellen."
+      cookies: "Wir verwenden Cookies und andere Technologien, um zu erfahren, wie Sie AuthorCatch nutzen."
+      accesses: "AuthorCatch erfasst Informationen automatisch, wenn Sie unsere Website aufrufen. Diese Informationen umfassen unter anderem URL, IP-Adresse, Browserart, Sprache sowie das Datum und die Uhrzeit Ihrer Anfrage."
+      dont_passes: "Wir geben keine persönlichen Informationen an Dritte weiter."
+      summarizes: "Nur zusammengefasste entpersonalisierte Informationen werden an Dritte weitergegeben."
+      uses: "Die persönlichen Informationen werden für die Bereitstellung von gewünschten Dienstleistungen, einschließlich der Dienstleistungen mit angepassten Inhalten, verwendet."
+      researches: "Wir nutzen Ihre persönlichen Informationen ausserdem für interne Auswertungen, um Ihre Onlineerfahrung sowie unsere Technologien und Dienstleistungen zu verbessern."
+    power:
+      label: "Jurnalo Power Plan"
+      slogan: "Mit dem Jurnalo Power Plan aktivieren Sie die beste Nachrichten-Lese-Erfahrung, die man für Geld kaufen kann."
+      gives: "Der Jurnalo Power Plan gibt Ihnen alle Funktionen des Basis Plans, plus:"
+      topics: "- unbegrenzt eigene Suchthemen"
+      authors: "- unbegrenzt Autoren-Abonnements"
+      sources: "- unbegrenzt Quellen-Gewichtungen"      
+      cancel: "Die Bezahlung geschieht von Monat zu Monat. Wenn Sie kündigen, wird Ihnen nur noch der laufende Monat in Rechnung gestellt."
+    upgrade:
+      required: "Account Upgrade erforderlich"
+      reason_: "Für unbegrenzten Zugang upgraden Sie bitte auf den Jurnalo Power Plan."
+      reason_1: "Um mehr als ein eigenes Thema zu erstellen, upgraden Sie bitte auf den Jurnalo Power Plan."
+      reason_2: "Um mehr als eine Quelle zu gewichten, upgraden Sie bitte auf den Jurnalo Power Plan."
+      reason_3: "Um mehr als einen Autoren zu abonnieren, upgraden Sie bitte auf den Jurnalo Power Plan."
+    wizard:
+      title: 'Neu hier?'
+      create_topic: "Erstellen Sie jetzt Ihr erstes eigenes Thema mit Jurnalo!"
+      subscribe_author: "Erhalten Sie alle Artikel Ihrer Lieblingsautoren!"
+      rate_source: "Gewichten Sie jetzt Ihre erste Nachrichten-Quelle mit Jurnalo!"
+      reading_list: "Speichern Sie jetzt den ersten interessanten Artikel zu Ihrer Leseliste mit Jurnalo!"
+      whats_that: "Was ist das?"
+      free_signup: "oder {{link}}"
+      fb_login: "{{link}}"
+      do_not_show_again: "Bitte nicht nochmal anzeigen."
+  author:
+    like:
+      info: "Artikel dieses Autors bevorzugen"
+      by_you: "Sie bevorzugen diesen Autor."
+    dislike:
+      info: "Artikel dieses Autors nicht bevorzugen"
+      by_you: "Sie bevorzugen diesen Autor nicht."
+    action:
+      subscribe: 'catch'
+      unsubscribe: 'uncatch'
+      search_here: 'Hier Autoren finden!'
+    not:
+      found: "Autor nicht gefunden"
+    stories:
+      label: "Artikel"
+    list:
+      label: "Liste der Autoren"
+    filter:
+      all: 'Alle'
+      subscribed: 'abonniert'
+      rated: 'gewichtet'
+  authors:
+    what:
+      label: "Autoren Abonnieren"
+    subscribe:
+      why: "Erhalten Sie jeden neuen Artikel von Ihren Lieblingautoren,<br> egal aus welcher Nachrichten-Quelle."
+      howto: "Anleitung:"
+      step_1: "Klicken Sie auf den Namen des Autors."
+      step_2: "Klicken Sie rechts vom Namen auf 'abonnieren'."
+    search:
+      label: "Autoren Suche"
+      info: "Suchen Sie jetzt nach einem Lieblings-Autor:"
+    top_list:
+      label: "Liste der zurzeit beliebtesten Autoren"
+      browse: "Oder finden Sie hier eine Liste der zur Zeit bei den Jurnalo Nutzern beliebtesten Autoren: "
+    not:
+      found: "Autor nicht gefunden."
+  cluster:
+    all:
+      blogs: 
+        one: "1 Blog"
+        other: "{{count}} Blogs"
+      headlines: 
+        one: "alle 1 Artikel"
+        other: "alle {{count}} Artikel"
+      opinions:
+        one: "1 Meinung" 
+        other: "{{count}} Meinungen"
+      stories: "Ähnliche Artikel"
+      videos: 
+        one: "1 Video"
+        other: "{{count}} Videos"
+      label: "Alle"
+    not:
+      found: "Gruppe nicht gefunden."
+  edition:
+    other: "Andere Nachrichtenausgaben"
+  navigation:
+    bottom:
+      about: "Über AuthorCatch"
+      feedback: "Feedback"
+      imprint: "Impressum"
+      privacy: "Datenschutz"
+      contact: "Kontakt"
+    main:
+      back_to_home: "zurück zur Homepage"
+      add_section: "Neue Rubrik"
+      add_topic: "Neues Thema"
+      business: "Wirtschaft"
+      culture: "Feuilleton"
+      mixed: "Vermischtes"
+      my_authors: "Meine Autoren"
+      my_topics: "Meine Themen"
+      my_topic: "Mein Thema"
+      opinions: "Beliebte Autoren"
+      politics: "Politik"
+      sections: "Rubriken"
+      science: "Wissen"
+      sport: "Sport"
+      technology: "Technik"
+      top_stories: "Schlagzeilen"
+      top_authors: "Top Autoren"
+    top:
+      help: "Hilfe"
+      login: "Einloggen"
+      logout: "{{name}} (ausloggen)"
+      reading_list: "Leseliste"
+      register: "Registrieren"
+      settings: "Einstellungen"
+      upgrade: "Upgrade"
+      renew: "Erneuern"
+  pagination:
+    previous: "zurück"
+    next: "vorwärts"
+  prefs:
+    labels: 
+      rate: 'Gewichtung:'
+    home_action:
+      edit: 'bearbeiten'
+      show: 'zeigen'
+      hide: 'verstecken'
+      delete: 'entfernen'
+      up: 'hoch bewegen'
+      down: 'runter bewegen'
+    edition:
+      int: 'International'
+      de: 'Deutschland'
+      at: 'Österreich'
+      ch: 'Schweiz'
+      in: 'India'
+      us: 'U.S.'
+      gb: 'U.K.'
+      sg: 'Singapore'
+    country:
+      int: 'Global'
+      de: 'Deutschland'
+      at: 'Österreich'
+      ch: 'Schweiz'
+      in: 'Indien'
+      us: 'USA'
+      gb: 'Großbritannien'
+      sg: 'Singapur'
+    val:
+      nil: 'nicht gewichtet'
+      none: 'ignorieren'
+      ban: 'ignorieren'
+      low: 'niedrig'
+      medium: 'mittel'
+      neutral: 'neutral'
+      high: 'hoch'
+      only: 'nur'
+    label:
+      remove: 'entfernen'
+      add_to_reading_list: 'zur Leseliste hinzufügen'
+    category:
+      politics: 'Politik'
+      business: 'Wirtschaft'
+      culture: 'Feuilleton'
+      science: 'Wissen'
+      technology: 'Technik'
+      sport: 'Sport'
+      mixed: 'Vermischtes'
+      opinions: 'Beliebte Autoren'
+    sort:
+      relevance: "Relevanz"
+      time: "Zeit"
+      cluster: 
+        relevance: "Relevanz in Gruppen"
+        time: "Zeit in Gruppen"
+    subscription:
+      all: "alle"
+      free: "gratis"
+      no_login: "ohne Login"
+    time_span:
+      last_hour: 'letzte Stunde'
+      last_day: 'letzter Tag'
+      last_week: 'letzte Woche'
+      last_month: 'letzter Monat'
+  search:
+    results:
+      per_page: "{{count}} Ergebnisse pro Seite"
+      sorting: "sortiert nach:"
+    page:
+      title: "Suchergebnisse für: {{query}}"
+      authors: "Autoren:"
+      sources: "Publikationen:"
+      articles: "Artikel"
+    topic:
+      add: "zu meinem Thema machen"
+    simple: "suche Autoren"
+    simple_mobile: "suche"
+    advance: 
+      label: "Erweiterte Suche"
+      find: 
+        label: "Ergebnisse finden"
+        at_least: "mit mind. einem der Wörter:"
+        all: "mit all diesen Wörtern:"
+        exact: "mit genau dieser Wortfolge:"
+        without: "ohne diese Wörter:"
+      sorting: "Sortieren nach:"
+      timespan: "Zeitraum:"
+      filter: 
+        label: "Filter"
+        source: "Publikation:"
+        author: "Autor:"
+        region: "Region:"
+        category: "Rubrik:"
+        subscription: "Abonnement:"
+      preferences: 
+        label: "Gewichtungen"
+        video: "Videos:"
+        opinion: "Meinungen:"
+        blog: "Blogs:"
+  source:
+    like:
+      info: "Artikel dieser Publikation bevorzugen"
+      by_you: "Sie bevorzugen diese Publikation."
+    dislike:
+      info: "Artikel dieser Publikation nicht bevorzugen"
+      by_you: "Sie bevorzugen diese Publikation nicht."
+    what:
+      label: "Quellen Gewichten"
+    action:
+      rate_here: "Hier Quellen gewichten!"
+    rating:
+      howto: "Anleitung:"
+      step_1: "Klicken Sie auf den Namen einer Publikation."
+      step_2: "Wählen Sie rechts oben eine Gewichtung:"
+      what: "Sie können jeder Publikation eine der folgenden Gewichtungen geben:"
+      values: "'nicht gewichtet', 'ignorieren', 'niedrig', 'mittel', oder 'hoch'"
+      personalized_results: "Diese Gewichtung entscheidet über das Ranking Ihrer Suchergebnisse."
+      not_rated_info: "Wenn Sie 'nicht gewichtet' wählen, dann gilt die Default-Gewichtung. Diese richtet sich nach der durchschnittlichen Gewichtung durch alle AuthorCatch Nutzer."
+      rated_sources: "Unter 'Einstellungen > meine Quellen' sehen Sie eine Liste aller Quellen, denen Sie bereits eine Gewichtung gegeben haben."
+    not:
+      found: "Quelle nicht gefunden."
+  stories:
+    this: "Diesen Artikel"
+    not:
+      found: "Keine Artikel gefunden."
+      found_for_query: "Keine Artikel zu {{query}} gefunden."
+  seo:
+    page:
+      default_title: "AuthorCatch - Fange Deine Lieblingsautoren!"
+      title:
+        author: "Artikel von {{name}} - AuthorCatch"
+        cluster_group: "{{name}} - AuthorCatch"
+        my_author: "Meine Autoren - AuthorCatch"
+        opinions: "Meinungen zu {{query}} - AuthorCatch"
+        reading_list: "Leseliste - AuthorCatch"
+        search: "{{query}} - AuthorCatch"
+        videos: "Videos zu {{query}} - AuthorCatch"
+  reading_list:
+    what:
+      label: 'Artikel zur Leseliste Speichern'
+    action:
+      howto: "Wie geht das?"
+    add:
+      why: "Mit der Leseliste können Sie Artikel zum später lesen speichern."
+      why_2: "Die Links zu diesen Artikeln bleiben Ihnen auf Ihrer Leseliste erhalten, bis Sie sie löschen."
+      howto: "Anleitung:"
+      step_1: "Halten Sie die Maus auf die Überschrift des Artikels."
+      step_2: "Klicken Sie auf das Plussymbol."
+      step_3: "Klicken Sie auf 'zur Leseliste speichern'"
+  topic:
+    label:
+      new: 'Neues Thema'
+      what: 'Eigenes Thema Erstellen'
+    action:
+      add: 'Thema hinzufügen'
+      test: 'testen'
+      advance: 'Erweitert'
+      simple: 'Einfach'
+      create: 'Los!'
+      create_topic: 'Thema erstellen'
+      advance_topic: 'erweitert'
+      advance_topic_info: "{{link}}"
+    name: 'Name des Themas:'
+    query: 'Suchbegriff:'
+    what:
+      info: "Erhalten Sie automatisch alle Nachrichten zu einem Suchbegriff. "
+      feature: "Diese erscheinen auf Ihrer Homepage und per E-mail."
+  rate:
+    source: 'Quelle gewichten'
+    author: 'Autoren gewichten'
+  more:
+    info: "mehr Informationen"
+    related:
+      stories: "alle {{count}} ähnlichen Artikel"
+  frame:
+    back: "zurück"
+  stars:
+    info:
+      author: 
+        zero: "Dieser Autor hat noch keine Bewertungen."
+        one: "{{percent}}% der Benutzer bevorzugen diesen Autor."
+        other: "{{percent}}% der Benutzer bevorzugen diesen Autor."
+      source:
+        zero: "Diese Publikation hat noch keine Bewertungen." 
+        one: "{{percent}}% der Benutzer bevorzugen diese Publikation."
+        other: "{{percent}}% der Benutzer bevorzugen diese Publikation."

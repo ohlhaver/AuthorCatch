@@ -1,0 +1,21 @@
+<% content_for :custom_javascript do %>
+  <%= render :partial => 'topics/js' %>
+<% end %>
+<div class='news_group'>
+  <div class='news_block'>
+    <h2><span class="page_label"><%= t('topic.label.what') %></h2></span>
+	<br>
+    <div class= 'adv_search_lines'>
+    <% @topic ||= TopicPreference.new %>
+    <% form_for( @topic, :url => topics_path, :html => { :id => 'simple_topic_form' }, :method => :post ) do |f| %>
+	  <%= t('topic.what.info') %> <br>
+      <%= t('topic.what.feature') %>
+      <span><%= f.text_field(:search_all, :id => 'wizzard_searchfield') %></span> 
+      <%= submit_tag( t('topic.action.create_topic'), :class => "wizzard_searchbutton" ) %>&nbsp;&nbsp;
+      <%= link_to_function( t('topic.action.test'), "test_topic( 'simple_topic_form' )"  ) %> | 
+      <%= hidden_field_tag( :advance, 0, :id => 'advance_topic_field' ) %>
+      <%= t('topic.action.advance_topic_info', :link => link_to_function( t('topic.action.advance_topic'), "advance_topic( 'simple_topic_form' )" ) ) %> 
+    <% end %>
+    </div>
+  </div>
+</div>

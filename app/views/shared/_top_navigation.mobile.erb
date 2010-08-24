@@ -1,0 +1,26 @@
+<% content_for :user_actions do -%>
+<% if logged_in? -%>
+     <%= link_to( t( 'navigation.top.logout', :name => current_user.name ), logout_path ) %>
+
+  <% else -%>
+     <%= link_to( t( 'navigation.top.login' ), login_path ) -%>
+     - <a class="fb_button fb_button_small" rel="nofollow" onclick="facebook_onlogin();return false" href="<%= @facebook_login_url %>" ><span class="fb_button_text"><%= t('jurnalo.login.fb_button') %></span></a>
+  <% end %>
+<% end %>
+<% if logged_in? -%><% unless current_user.power_plan? %><%= link_to( t(current_user.renew? ? 'navigation.top.renew' : 'navigation.top.upgrade'), account_path( :action => 'power_plan', :jar => 1) ) %> -
+  <% end %>
+<% end %>
+  <%= yield :user_actions -%>
+
+<br>
+<% # Reading List Block %>
+  <%= link_to( t( 'navigation.top.reading_list' ), :controller => '/reading_list', :action => 'index' ) -%> - <%= link_to( t( 'navigation.top.settings' ), account_path( :jwa => 1, :edition => session[:edition] ) ) -%>
+
+
+<div id ="edition">
+<%= render :partial => 'shared/edition' %>		
+</div>
+
+
+
+

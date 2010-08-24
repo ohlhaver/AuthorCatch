@@ -1,0 +1,24 @@
+<div class="pagination_module" class="grid_4"></div>
+<% content_for :custom_javascript do %>
+  <%= observe_form( "per_page_form", :function => "$('per_page_form').submit();" ) %>
+<% end %>
+<div class='pagination ta_center'>
+  <span class='prev'><%= link_to_page( t('pagination.previous'), pagination.previous_page ) %></span>
+  <span>-</span>
+  <% pagination.numbered_pages.each do |page| %>
+	<% if pagination.current_page == page %>
+		<span class='current_page'><%= link_to_page( page, ( pagination.current_page == page ) ? nil : page ) %></span>
+	<%else%>
+    	<span class='page'><%= link_to_page( page, ( pagination.current_page == page ) ? nil : page )%></span>
+	<%end%>
+  <% end %>
+  <span>-</span>
+  <span class='next'><%= link_to_page( t('pagination.next'), pagination.next_page ) %></span>
+</div>
+
+<div class='per_page ta_center'>
+    <% form_tag( url_for(:controller => :preferences, :action => :set_per_page ), :method => :get, :id => :per_page_form ) do %>
+      <% #page_params( :exclude => 'per_page' ).collect{ |param| hidden_field_tag( param, params[param] ) }.join('') %>
+      <%= t( 'search.results.per_page', :count => select_tag( 'id', options_for_select( per_page_options, per_page ) ) ) %>
+    <% end %>
+</div>

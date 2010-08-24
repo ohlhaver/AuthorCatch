@@ -1,0 +1,12 @@
+<% cache "cluster-mobi/#{cluster.id}-info", :expires_in => 1.hour do -%>
+<%= link_to( t( 'cluster.all.headlines', :count => cluster.story_count ), cluster_path( cluster.to_param ) ) %>
+<% if cluster.video_count > 0 %>
+  - <%= link_to( t( 'cluster.all.videos', :count => cluster.video_count ), cluster_path( :id => cluster.to_param, :video => '1' ) ) %>
+<% end %>
+<% if cluster.blog_count > 0 %>
+  - <%= link_to( t( 'cluster.all.blogs', :count => cluster.blog_count ), cluster_path( :id => cluster.to_param, :blog => '1' ) ) %>
+<% end %>
+<% if cluster.opinion_count > 0 %>
+  - <%= link_to( t( 'cluster.all.opinions', :count => cluster.opinion_count ), cluster_path( :id => cluster.to_param, :opinion => '1' ) ) %>
+<% end %> &raquo;
+<% end %>

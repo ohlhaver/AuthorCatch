@@ -1,0 +1,21 @@
+<script type='text/javascript'>
+  function test_topic( form_id ){
+    var form = $( form_id );
+    form.action = '<%= search_results_stories_path %>';
+    form.submit();
+  }
+  function advance_topic( form_id ){
+    var form = $( form_id );
+    var field = $( 'advance_topic_field' );
+    form.action = '<%= new_topic_path %>';
+    field.value = 1;
+    form.submit();
+  }
+  function simple_topic( form_id ){
+    var form = $( form_id );
+    var field = $( 'advance_topic_field' );
+    form.action = '<%= new_topic_path %>';
+    field.value = '';
+    form.submit();
+  }
+</script>

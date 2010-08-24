@@ -1,0 +1,31 @@
+<% form_url = topic_path( @topic ) %>
+<% form_method = :get %>
+<div class='news_group'>
+  <div class='news_block'>
+	<% if @topic.stories.empty? %>
+      <h2><span class = "about">
+        <%= t( 'stories.not.found_for_query', :query => link_to( truncate( @topic.name, 20 ), edit_topic_path( @topic ), :title => t('prefs.home_action.edit') ) ) %>
+      </span></h2>
+	<%else%>
+    <h2>
+	  <span class='links'><%= render_search_preference_form( :sort_criteria, :form_url => form_url, :form_method => form_method  ) %></span>
+      <span class="page_label"><%= t( 'navigation.main.my_topic' )%>: <%= link_to( @topic.name, edit_topic_path( @topic ), :title => t('prefs.home_action.edit')  ) -%></span>&nbsp;&nbsp;<%= link_to( image_tag( 'rss.png'), @rss_url ) %>
+	</h2>
+
+		<div class='result_filter'><%= render_filter_links( @topic.facets, form_url, form_method ) %></div>
+    
+
+    <% @topic.stories.each do |story| %>
+      <div class='medium_cluster'>
+        <% if story.cluster && story.cluster.stories.any? %>
+          <%= render_cluster_preview( story.cluster, story ) %>
+        <% else %>
+          <%= render_story_search_preview( story ) %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% end %>
+  </div>
+</div>
+<%= render_pagination( @topic ) %>

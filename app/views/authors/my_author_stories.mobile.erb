@@ -1,0 +1,22 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <span class="page_label"> <%= t('navigation.main.my_authors') %> </span>  </h2>
+		<br>
+      <div class='result_filter'> <%= render_my_author_link( 'author.stories.label', :stories, my_authors_path ) %> 
+        <%= render_my_author_link( 'author.list.label', :authors, my_authors_path( :list => 1 ) ) %> </div>
+   
+    <% # render_category_navigation( source_path( @source ) ) %>
+
+	<% @stories.each do |story| %>
+      <div class='medium_cluster'>
+        <div class='headline'><%= render_story_search_preview( story ) %></div>
+      </div>
+    <% end %>
+    <% if @stories.empty? %>
+      	<br>
+       <h2><span class = "about"><%= t('stories.not.found')%></span></h2>
+    <% end %>
+  </div>
+</div>
+<%= render_pagination( @stories ) %>

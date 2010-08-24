@@ -1,0 +1,33 @@
+<% # facets, form_url and form_method are three local params for this template %>
+<% content_for :custom_javascript do %>
+  <script type='text/javascript'>
+    function filter_click( filter ) {
+      var form = $('filter_form');
+      var blog = "";
+      var video = "";
+      var opinion = "";
+      if ( filter == "blog" ) blog = "1";
+      if ( filter == "video" ) video = "1";
+      if ( filter == "opinion" ) opinion = "1";
+      var field = $('filter_form_field_blog');
+      if ( field ) field.value = blog;
+      field = $('filter_form_field_video');
+      if ( field ) field.value = video;
+      field = $('filter_form_field_opinion');
+      if ( field ) field.value = opinion;
+      form.submit();
+    }
+  </script>
+<% end %>
+<% form_tag form_url, :method => form_method, :id => 'filter_form', :class => 'inline_form' do %>
+    <%= page_params( :exclude => [ 'page', 'blog', 'video', 'opinion' ] ).collect{ |param| hidden_field_tag( param, params[param] ) }.join('') %>
+    <%= hidden_field_tag( :blog, params[:blog], :id => 'filter_form_field_blog' ) %>
+    <%= hidden_field_tag( :video, params[:video], :id => 'filter_form_field_video' ) %>
+    <%= hidden_field_tag( :opinion, params[:opinion], :id => 'filter_form_field_opinion' ) %>
+<% end %>
+<% if facets.filter_count > 0 && !@skip_filters %>
+    <%= render_filter_link( :all, 'cluster.all.label', 1 ) %>
+    <%= render_filter_link( :video, 'cluster.all.videos', facets.video_count ) %>
+    <%= render_filter_link( :opinion, 'cluster.all.opinions', facets.opinion_count ) %>
+    <%= render_filter_link( :blog, 'cluster.all.blogs', facets.blog_count ) %> 
+<% end %>

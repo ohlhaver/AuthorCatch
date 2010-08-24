@@ -1,0 +1,19 @@
+<% content_for :user_actions do -%>	
+  <% if logged_in? -%>
+    <%= link_to( t( 'navigation.top.logout', :name => current_user.name ), logout_path ) %> 
+
+  <% else -%>
+
+	<a class="fb_button fb_button_small" rel="nofollow" onclick="facebook_onlogin();return false" href="<%= @facebook_login_url %>" ><span class="fb_button_text"><%= t('jurnalo.login.fb_button') %></span></a><br>
+	
+	
+
+     
+  <% end %>
+<% end %>
+
+ <%= yield :user_actions -%>
+
+
+ 
+ 

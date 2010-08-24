@@ -1,0 +1,10 @@
+ram:
+  servers:
+  #- "localhost:11211"
+development: 
+  servers:
+production:
+  servers:
+  - "10.176.238.17:11211"
+justus:
+  servers:

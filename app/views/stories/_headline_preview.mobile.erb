@@ -1,0 +1,31 @@
+<% erb_cache "stories/headline-mobi/#{story.id}-#{hide_image}-#{I18n.locale}-v9", { :expires_in => 24.hours, :locals => { :story => story, :hide_add_to_reading_list => hide_add_to_reading_list } } do %>
+<% render_image_block( story, hide_image ) do -%>
+
+
+  <span class='title'>
+    <%= story_symbol( story ) %> <%= link_to( story.title, story_path( story ), :onclick => js_related_links_fragments, :rel => 'nofollow' ) %>
+  </span>
+
+<br>
+<% if story.source %>
+  <% mouse_over( :icon ) do | iconEventClass, iconItemClass | %>
+    <span class='source fs80 <%= iconEventClass %>'>
+      <%= link_to( story.source.name, source_path( story.source ) ) %>
+    </span>
+  <% end %>  
+  <span class='separator'>-</span>
+<% end %>
+<% if story.authors.any? && !hide_authors %>
+  <% story.authors.each do |author| %>
+    
+      <span class='author fs80'>
+        <%= link_to( author.name, author_path( author ) ) -%>
+        
+      </span>
+  
+    <span class='separator'>-</span>
+  <% end %>
+<% end %>
+<span class='age fs80'><%%= time_ago_in_words( story.created_at ) -%></span>
+<% end %>
+<% end %>

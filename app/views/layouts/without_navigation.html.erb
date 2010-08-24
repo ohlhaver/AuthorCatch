@@ -1,0 +1,80 @@
+<% content_for :page_title do -%>
+  <%= @page_title || t( 'seo.page.default_title' ) %>
+<% end -%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= I18n.locale  %>" lang="<%= I18n.locale  %>">
+  <head>
+    <title><%= yield :page_title %></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="google-site-verification" content="VS03LbVdB3M3d77QXod0ozOkkKRKCwKmkMZjVts6Y4w" />
+    <meta name="verify-v1" content="uktXEFRkC4oLS3pjPi7ZkolIVksbOF8D7PRiyCDs+fM=" />
+    <META name="y_key" content="4b5e881361af8e48">
+    <meta name="keywords" content="Jurnalo, Journalo" />
+    <%= stylesheet_link_tag 'reset', 'grid10', 'simple', 'fb', :cache => 'base10' %>
+  </head>
+  <body>
+    <div class="container_10">
+      <div id= "top_frame" class = "grid_8">
+        <%= link_to( image_tag( 'logo.gif'), root_path ) %>
+        <% form_tag( stories_path, :id => 'search_form', :method => :get, :class => 'inline_form' ) do -%>
+          <input type="text" title="Search News" autocomplete="off" tabindex="1" name="q" id = 'searchfield' class ="text"  value="<%= params[:q] -%>" />
+          <input type="submit" value="<%= t( 'search.simple' ) -%>" tabindex="2" id = 'searchbutton' class ="button"/>
+          <div class='search-box-link'>
+            <%= link_to( t( 'search.advance.label' ), advanced_stories_path ) %>
+          </div>
+        <% end -%>
+      </div>
+      <div id="top_navigation" class="grid_2">
+        <%= render :partial => 'shared/top_navigation' %>
+      </div>
+      <div id="edition" class="prefix_8 grid_2">
+        <%= render :partial => 'shared/edition' %>		
+      </div>
+      <% if flash[:notice] %>
+        <div class="flash grid_10" style="color:green" ><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="flash grid_10" style="color: red"><%= flash[:error] %></div>
+      <% end %>
+      <div id="content" class="grid_10">
+        <%= yield %>
+      <div class="clearfix">&nbsp;</div>
+      <div class="pagination_module" class="grid_10"></div>
+      <div class='news_group'>
+        <%= show_wizard( :random ) %>
+      </div>
+      <div class="pagination_module" class="grid_10"></div>
+        <%= render :partial => 'shared/lrec' %>
+      </div>
+      <div id="footer" class = "grid_10">
+        <%= render :partial => 'shared/footer' %>
+      </div>
+      <%= javascript_include_tag 'prototype', 'effects', 'controls', 'application', :cache => 'jbase' %>
+      <script>
+        var elements = $$('div.news_group');
+        elements.each( function(element) {
+          Event.observe(element, 'mouseover', showMouseOvers);
+          Event.observe(element, 'mouseout', hideMouseOvers);
+        });
+        Event.observe($('navigation'), 'mouseover', showNavigationMouseOvers );
+        Event.observe($('navigation'), 'mouseout', hideNavigationMouseOvers );
+      </script>
+      <%= yield :custom_javascript %>
+  </div>
+  <script type="text/javascript">
+    function facebook_onlogin(){
+      document.location.href = "<%= @facebook_login_url %>";
+    }
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-6270445-1");
+      pageTracker._setDomainName(".jurnalo.com");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>

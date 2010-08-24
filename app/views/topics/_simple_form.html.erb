@@ -1,0 +1,14 @@
+<div class= 'adv_search_lines'>
+  <% form_for( @topic, :url => topics_path, :html => { :id => 'simple_topic_form' }, :method => :post ) do |f| %>
+    <%= f.error_messages %>
+
+    <div id = "topic_label">
+      <span><%= t('topic.query') -%></span>
+      <span><%= f.text_field(:search_all, :id => "adv_searchfield") %></span>
+    </div>
+    <%= submit_tag( t('topic.action.add'), :class => "adv_searchbutton" ) %><br>
+    <%= hidden_field_tag( :advance, 1, :id => 'advance_topic_field' ) %>
+    <%= link_to_function( t('topic.action.advance'), "advance_topic( 'simple_topic_form' )" ) %> |
+    <%= link_to_function( t('topic.action.test'), "test_topic( 'simple_topic_form' )"  ) %>
+  <% end %>
+</div>

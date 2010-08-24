@@ -1,0 +1,25 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2><span class="page_label"><%= t('authors.what.label') %></h2></span>
+    <div class= 'about'>
+      <%= t('authors.subscribe.why') %><br/><br/>
+	<%= t('authors.subscribe.howto') %><br/><br/>
+      <ol class='numbered'>
+        <li><%= t 'authors.subscribe.step_1' %></li><br/>
+        <li><%= t 'authors.subscribe.step_2' %></li>
+      </ol>
+
+	<br/><br>
+      <%form_tag stories_path, :method => :get do %>
+        <%= text_field_tag(:q, '', :id => 'wizzard_searchfield') %>
+        <%= submit_tag( t('authors.search.label'), :class => "wizzard_searchbutton" ) %>
+      <% end %>
+      <br/>
+	<div class ="adv_search_lines">
+	 <%= link_to t('authors.top_list.label'), top_authors_path %>
+	</div>
+
+      
+     </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2><span class="page_label"><%= t("navigation.main.#{@section.name}")%></span></h2>
+    <% if @section.opinions? %>
+      <% @section.stories.each do |story| %>
+        <div class='medium_cluster'>
+          <%= render_story_search_preview( story ) %>
+        </div>
+      <% end %>
+      <% if @section.stories.empty? %>
+        <br>
+        <h2><span><%= t('stories.not.found')%></span></h2>
+      <% end %>
+    <% else %>
+      <% @section.clusters.each do |cluster| %>
+      <div id='cluster_<%= cluster.id -%>' class='cluster'>
+        <%= render_cluster_preview( cluster ) %>
+      </div>
+      <% end %>
+      <% if @section.clusters.empty? %>
+        <br>
+        <h2><span class = "about"><%= t('stories.not.found')%></span></h2>
+      <% end %>
+    <% end -%>
+  </div>
+</div>
+<%= render_pagination( @section ) %>
+

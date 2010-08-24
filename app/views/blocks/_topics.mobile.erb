@@ -1,0 +1,20 @@
+<% if block.stories.any? %>
+
+  <div class='news_block'>
+    <h2>
+
+	  <span class="page_label"><%= link_to block.name, topic_path( block.id ) %></span>
+    </h2>
+    <% block.stories.each do |story| %>
+		<div id="topic_<%= block.id %>_<%= story.id %>" class='cluster'>
+        <% if story.cluster && story.cluster.stories.any? %>
+		
+          <%= render_cluster_preview( story.cluster, story ) %>
+        <% else %>
+		
+          <%= render_story_search_preview( story ) %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

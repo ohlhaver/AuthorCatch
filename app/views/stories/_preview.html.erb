@@ -1,0 +1,50 @@
+<% erb_cache "stories/preview/#{story.id}-#{I18n.locale}-v10", { :locals => { :expires_in => 24.hours, :story => story, :hide_add_to_reading_list => hide_add_to_reading_list } } do %>
+<%% if hide_add_to_reading_list %>
+  <span class='title'>
+   <%= story_symbol( story ) %> <%= link_to( story.title, story_path( story ), :onclick => js_related_links_fragments, :rel => 'nofollow' ) %> 
+  </span>
+<%% else %>
+<% mouse_over( :icon ) do |iconEventClass, iconItemClass| %>
+  <span class="title <%= iconEventClass -%>">
+    <%= story_symbol( story ) %> <%= link_to( story.title, story_path( story ), :onclick => js_related_links_fragments, :rel => 'nofollow' ) %> 
+    <!-- google_ad_section_start(weight=ignore) -->
+    <% mouse_over( :menu ) do |menuEventClass, menuItemClass| %> 
+      <span class='<%= iconItemClass -%> <%= menuEventClass -%> w200px'>
+        <%= link_to( image_tag( 'plus.gif', :class => 'inline pb5px', :title => t('prefs.label.add_to_reading_list') ), { :controller => '/reading_list', :action => :create, :id => story.id }, :method => :post, :rel => :nofollow )  %>
+        <%# fb_like_plugin( story ) %>
+        <!-- div class='<%= menuItemClass -%> actionsBox'></div -->
+      </span>
+    <% end -%>
+    <!-- google_ad_section_end -->  
+  </span>
+<% end %>
+<%% end %>
+<span class='separator first'>-</span>
+<% if story.source %>
+  <% mouse_over( :icon ) do | iconEventClass, iconItemClass | %>
+    <span class='source fs80 <%= iconEventClass %>'>
+      <%= link_to( story.source.name, source_path( story.source ) ) %>
+    </span>
+  <% end %>
+<% end %>
+<% if story.authors.any? && !hide_authors %>
+<span class='separator'>-</span>
+  <% story.authors.each do |author| %>
+    <% mouse_over(:icon) do | iconEventClass, iconItemClass | %>
+      <span class='author fs80 <%= iconEventClass -%>'>
+        <%= link_to( author.name, author_path( author ) ) -%>
+        <!-- google_ad_section_start(weight=ignore) --> 
+        <% mouse_over(:menu) do | menuEventClass, menuItemClass | %>
+          <span class='<%= iconItemClass -%> <%= menuEventClass -%>'>
+            <%= link_to( image_tag( 'plus.gif', :title => t('author.action.subscribe') ), subscribe_author_path( author ), :method => :put ) %>
+            <!-- div class='<%= menuItemClass -%> actionsBox'></div -->
+          </span>
+        <% end %>
+        <!-- google_ad_section_end -->
+      </span>
+    <% end -%>
+    <span class='separator'> </span>
+  <% end %>
+<% end %>
+
+<% end %>

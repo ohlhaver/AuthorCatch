@@ -1,0 +1,33 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2 class = "reading_list_label">
+     <span class="page_label"> <%= t( 'navigation.top.reading_list' ).capitalize %></span>
+	</h2>
+    <% mouse_over( :dialog ) do | dialogEventClass, dialogItemClass | %>
+    <% @stories.each do |story| %>
+	<div class = 'medium_cluster'>  
+	  	
+		<div class='reading_list_block <%= dialogEventClass -%>'>
+		<h2>
+			<span class='dialogBox <%= dialogItemClass%>'>
+			  <%= link_to( image_tag('close.gif'),  { :action => 'destroy', :id => story.id }, :method => :delete, :confirm => 'Are you sure?' ) -%>
+			 <%= link_to( t('prefs.home_action.delete'),  { :action => 'destroy', :id => story.id }, :method => :delete, :confirm => 'Are you sure?' ) -%>
+		    </span>
+		 
+		</h2>
+         <div class='medium_headline'><%= render_headline_preview( story, :without => [ :add_to_reading_list ] ) %> </div>
+       </div>
+		
+	 </div>
+	<% end %>
+	<% #Donot Remove erb bugfix comment. Required to render the page correctly  %>
+	<!-- erb bugfix -->
+    <% end %>
+    <% if @stories.empty? %>
+      	<br>
+       <h2><span><%= t('stories.not.found')%></span></h2>
+    <% end %>
+	
+  </div>
+</div>
+<%= render_pagination( @stories ) %>

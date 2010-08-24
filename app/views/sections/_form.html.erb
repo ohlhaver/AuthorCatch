@@ -1,0 +1,6 @@
+<% content_for :custom_javascript do %>
+  <%= observe_field( "create_section_form_select", :function => "$('create_section_form').submit();" ) %>
+<% end %>
+<% form_tag( '/sections/create', :class => 'inline_form', :id => 'create_section_form' ) do %>
+  <%= select_tag( :preference_id, options_for_select( preference_options( :cluster_group, :args => news_edition, :include_blank => true ) ), :id => 'create_section_form_select' ) %>
+<% end %>

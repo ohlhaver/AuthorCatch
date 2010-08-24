@@ -1,0 +1,23 @@
+<% if block.any? %>
+  <% mouse_over( :dialog ) do |dialogEventClass, dialogItemClass| %>
+  <div class='news_block <%= content_block_position %> <%= dialogEventClass -%>'>
+    <h2>
+		<span class='dialogBox <%= dialogItemClass -%>'>
+	         <% #hide functionality is not available  %>
+	         <% #link_to( t( 'prefs.home_action.hide' ), hide_authors_path ) %>
+	         <%= link_to( image_tag('up.gif'), up_authors_path ) %>
+		     <%= link_to( t( 'prefs.home_action.up' ), up_authors_path ) if one_column_layout? %>
+	 		&nbsp;&nbsp;
+	        <%= link_to( image_tag('down.gif'), down_authors_path ) %> 
+			<%= link_to( t( 'prefs.home_action.down' ), down_authors_path ) if one_column_layout? %>
+	  	</span>
+      <span class="page_label"><%= link_to t('navigation.main.my_authors'), my_authors_path %></span>
+      
+    </h2>
+    <% block.each do |story| %>
+      <div class='cluster'><%= render_story_search_preview( story )%></div>
+    <% end %>
+  </div>
+  <% end %>
+  <%= content_block_clearfix %>
+<% end %>

@@ -1,0 +1,30 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+		<div class = "rater"></div>
+		<span class="page_label">
+	      <div class="name"><%= @source.name %></div> <%= render_rating_stars( @source ) %>&nbsp;<%= render_source_rating_form( @source_preference, @source) %>&nbsp;&nbsp;&nbsp;<%= fb_like_plugin( @source ) unless @source.new_record? %>
+		</span>
+
+    </h2>
+<br>
+    <% if @categories.any? %>
+
+    <div class ='result_filter'>
+      <%= render_category_links( @categories, source_path( @source ) ) %>
+    </div>
+    <% end %>
+
+
+    <% @stories.each do |story| %>
+      <div class='medium_cluster'>
+        <div class='headline'><%= render_story_search_preview( story ) %></div>
+      </div>
+    <% end %>
+    <% if @stories.empty? %>
+		<br>
+       <h2><span class = "about"><%= t('stories.not.found')%></span></h2>
+    <% end %>
+  </div>
+</div>
+<%= render_pagination( @stories ) %>

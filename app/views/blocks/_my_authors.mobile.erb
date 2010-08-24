@@ -1,0 +1,14 @@
+<% if block.any? %>
+ 
+  <div class='news_block'>
+    <h2>
+
+      <span class="page_label"><%= link_to t('navigation.main.my_authors'), my_authors_path %></span>
+      
+    </h2>
+    <% block.each do |story| %>
+      <div class='cluster'><%= render_story_search_preview( story )%></div>
+    <% end %>
+  </div>
+
+<% end %>

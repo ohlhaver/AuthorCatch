@@ -1,0 +1,15 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <span class="page_label"><%= t('navigation.main.top_authors') %> </span></h2>
+      <br>
+      <% @authors.each do |author| %>
+        <div class = "my_authors_block"></div>
+        <h2> <%= render_author_preview( author ) %> </h2>
+      <% end %>
+      
+      <% if @authors.empty? %>
+        <em><%= t( 'authors.not.found' ) %></em>
+      <% end %>
+  </div>
+</div>

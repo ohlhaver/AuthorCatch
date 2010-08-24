@@ -1,0 +1,4 @@
+<%= render_category_link( 'cluster.all.label', base_url, :all ) %>
+<% categories.each do | category | %>
+  <%= render_category_link( category.name, base_url, category.id ) %>
+<% end %>

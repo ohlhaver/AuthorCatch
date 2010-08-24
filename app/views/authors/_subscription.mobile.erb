@@ -1,0 +1,5 @@
+<% if author_preference.subscribed %>
+  <%= link_to t('author.action.unsubscribe'), unsubscribe_author_path( author ), :method => :put %>
+<% else %>
+  <%= link_to t('author.action.subscribe'), subscribe_author_path( author ), :method => :put %>
+<% end %>

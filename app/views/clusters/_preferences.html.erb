@@ -1,0 +1,14 @@
+<% content_for :custom_javascript do %>
+  <% attributes.each do |attribute| %>
+    <%= observe_field( "search_preference_field_#{attribute}", :function => "$('search_preference').submit();" ) %>
+  <% end %>
+<% end %>
+<% form_tag( form_url, :method => form_method, :id => 'search_preference' ) do %>
+&nbsp;&nbsp;<%= t('search.results.sorting') %>
+  <% page_params( :exclude => attributes.collect{ |a| to_param(a).to_s }.push( 'page' ) ).each do | param | %>
+    <%= hidden_field_tag( param, params[ param ] ) %>
+  <% end %> &nbsp;
+  <% attributes.each do | attribute | %>
+    <%= select_tag( to_param(attribute), options_for_select( preference_options( attribute ), send(attribute) ), :id => "search_preference_field_#{attribute}" ) %>
+  <% end %>
+<% end %>

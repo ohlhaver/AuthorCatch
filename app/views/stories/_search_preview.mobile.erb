@@ -1,0 +1,8 @@
+<% render_image_block( story ) do %>
+  <div class='medium_headline'><%= render_headline_preview( story, :without => :image ) %></div>
+  <% if story.cluster -%>
+  <ul><li class='medium_info'><%= render_cluster_info( story.cluster ) %></li></ul>
+  <% end -%>
+  <% #This comment is important please do not remove it. %>
+  <!-- dnt-del-->
+<% end %>

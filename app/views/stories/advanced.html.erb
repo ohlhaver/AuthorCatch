@@ -1,0 +1,97 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <span class="page_label"><%= t('search.advance.label') -%></span>
+    </h2>
+	<div class = "thin_results_module"></div>
+ 
+	<div class= 'adv_search_lines'>
+      <% form_tag search_results_stories_path do %>
+       
+         <%= t('search.advance.find.label') -%>
+          
+			<div>
+			<span><%= text_field_tag("q", params[:q], :id => "adv_searchfield") %></span>
+            <span><%= t('search.advance.find.all') -%></span>
+            
+            </div>
+          <div>
+			<span><%= text_field_tag("qa", params[:qa], :id => "adv_searchfield") %></span>
+            <span><%= t('search.advance.find.at_least') -%></span>
+            
+          </div>
+          <div>
+			<span><%= text_field_tag("qe", params[:qe], :id => "adv_searchfield") %></span>
+            <span><%= t('search.advance.find.exact') -%></span>
+            
+          </div>
+          <div>
+			<span><%= text_field_tag("qn", params[:qn], :id => "adv_searchfield") %></span>
+            <span><%= t('search.advance.find.without') -%></span>
+            
+          </div>
+         
+       
+
+		<div class = 'form_area'>
+          <div> 
+			<%= t('search.advance.sorting') -%>		
+			<span class='adv_search_menu'>
+           <%= select_tag( 'sc', options_for_select(  preference_options(:sort_criteria), sort_criteria ) ) %></span>
+          </div>
+          <div>
+           	<%= t('search.advance.timespan') -%>	<span class='adv_search_menu'>
+            <%= select_tag(:ts, options_for_select( preference_options(:time_span), time_span ) ) %></span>
+          </div>
+		</div>
+	
+       
+	  <div class = "thin_results_module"></div>
+         <%= t('search.advance.filter.label') -%>
+          <div>
+            <%= t('search.advance.filter.source') -%><span class='adv_search_menu'>
+            <%= source_auto_complete_field( 'topic', 'source_id', @topic.source ) %>
+            </span>
+          </div>
+        <div>
+            <%= t('search.advance.filter.author') -%><span class='adv_search_menu'>
+            <%= author_auto_complete_field( 'topic', 'author_id', @topic.author ) %>
+            </span>
+          </div>
+	<div class = 'form_area'>
+          <div>
+            <%= t('search.advance.filter.region') -%><span class='adv_search_menu'>
+            <%= select_tag(:rid, options_for_select( preference_options(:region, :include_blank => true) ) ) %></span>
+          </div>
+          <div>
+          <%= t('search.advance.filter.category') -%><span class='adv_search_menu'>
+            <%= select_tag(:cid, options_for_select( preference_options(:category, :include_blank => true ), params[:cid].to_i ) ) %></span>
+          </div>
+          <div>
+            <%= t('search.advance.filter.subscription') -%><span class='adv_search_menu'>
+            <%= select_tag( 'st', options_for_select(  preference_options(:subscription_type), subscription_type ) ) %></span>
+          </div>
+		</div>
+<div class = "thin_results_module"></div>
+          <%= t('search.advance.preferences.label') -%>
+		<div class = 'form_area'>
+          <div>
+            <%= t('search.advance.preferences.video') -%>
+            <span><%= select_tag(:vp, options_for_select( preference_options(:video_pref), video_pref ) ) %></span>
+          </div>
+          <div>
+            <%= t('search.advance.preferences.opinion') -%>
+            <span><%= select_tag(:op, options_for_select( preference_options(:opinion_pref), opinion_pref ) ) %></span>
+          </div>
+          <div>
+            <%= t('search.advance.preferences.blog') -%>
+            <span><%= select_tag(:bp, options_for_select( preference_options(:blog_pref), blog_pref ) ) %></span>
+          </div>
+		</div>
+
+
+        <%= submit_tag t('search.simple'), :class => "adv_searchbutton" %>
+      <% end %>
+    </div>
+  </div>
+</div>

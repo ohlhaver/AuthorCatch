@@ -1,0 +1,24 @@
+
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <div class='rater'>
+	    <%= render_author_subscription( @author_preference, @author ) %>
+      </div>
+	  <span class="page_label"> 
+	    <div class="name"><%= @author.full_name %></div><%= render_rating_stars( @author ) %>&nbsp;<%= render_author_rating_form( @author_preference, @author ) %>&nbsp;&nbsp;&nbsp;<%= fb_like_plugin( @author ) unless @author.new_record? %>
+	  </span>
+    </h2>
+	<br>
+    <% @stories.each do |story| %>
+      <div class='medium_cluster'>
+        <div class='medium_headline'><%= render_headline_preview( story, :without => [ :authors ] ) %></div>
+      </div>
+    <% end %>
+    <% if @stories.empty? %>
+		<br>
+       <h2><span class = "about"><%= t( 'stories.not.found' ) %></h2></span>
+    <% end %>
+  </div>
+</div>
+<%= render_pagination( @stories ) %>

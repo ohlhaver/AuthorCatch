@@ -1,0 +1,26 @@
+connect:
+  ram:
+    service: http://localhost:4000
+    account_server: http://localhost:3000
+    login_server: https://localhost
+    log_file: /log/cas.log
+  development:
+    service: http://beta.jurnalo.com
+    account_server: http://accounts.jurnalo.com
+    login_server: https://login.jurnalo.com
+    log_file: /log/cas.log
+  production:
+    service: http://beta.jurnalo.com
+    account_server: http://accounts.jurnalo.com
+    login_server: https://login.jurnalo.com
+    log_file: /log/cas.log
+client:
+  ram:
+    base_url: http://localhost:3000
+    access_key: PMFhEMs_IOuoj3Fy2bJ5
+  development:
+    base_url: http://api.jurnalo.com
+    access_key: VGYt8Yx2UIce2xIvOYMJ
+  production:
+    base_url: http://10.176.252.94
+    access_key: VGYt8Yx2UIce2xIvOYMJ

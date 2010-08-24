@@ -1,0 +1,48 @@
+<% show_down_link = true %>
+<% show_up_link = true %>
+<% show_down_link = false if author_preference.preference && author_preference.preference < 2 %>
+<% show_up_link = false if author_preference.preference && author_preference.preference > 1 %>
+<% form_dom_id = "tu_ap_rating_form_#{author.id}" %>
+<% if show_up_link %>
+  <% form_tag( rate_author_path( author ), :id => form_dom_id, :class => 'inline_form', :onmouseover => "thumbs_up_highlight('#{form_dom_id}')", :onmouseout => "thumbs_up_reset('#{form_dom_id}')", :title => t('author.like.info')  ) do %>
+    <%= hidden_field_tag :rating, 3 %>
+    <span class="img1 thumb"><%= image_submit_tag( 'tupg.png' ) %></span><span class="img2 thumb" style="display:none"><%= image_submit_tag( 'tupb.png' ) %></span>
+  <% end %>
+<% else %>
+  <% form_tag( rate_author_path( author ), :id => form_dom_id, :class => 'inline_form', :onmouseover => "thumbs_up_highlight('#{form_dom_id}')", :onmouseout => "thumbs_up_reset('#{form_dom_id}')", :title => t('author.like.by_you')  ) do %>
+    <%= hidden_field_tag :rating, '' %>
+    <span class="img1 thumb"><%= image_submit_tag( 'tupb.png' ) %></span><span class="img2 thumb" style="display:none"><%= image_submit_tag( 'tupg.png' ) %></span>
+  <% end %>
+<% end %>
+<% form_dom_id = "td_ap_rating_form_#{author.id}" %>
+<% if show_down_link %>
+  <% form_tag( rate_author_path( author ), :id => form_dom_id, :class => 'inline_form', :onmouseover => "thumbs_up_highlight('#{form_dom_id}')", :onmouseout => "thumbs_up_reset('#{form_dom_id}')", :title => t('author.dislike.info') ) do %>
+    <%= hidden_field_tag :rating, 1 %>
+    <span class="img1 thumb"><%= image_submit_tag( 'tdng.png' ) %></span><span class="img2 thumb" style="display:none"><%= image_submit_tag( 'tdnb.png' ) %></span>
+  <% end %>
+<% else %>
+  <% form_tag( rate_author_path( author ), :id => form_dom_id, :class => 'inline_form', :onmouseover => "thumbs_up_highlight('#{form_dom_id}')", :onmouseout => "thumbs_up_reset('#{form_dom_id}')", :title => t('author.dislike.by_you') ) do %>
+    <%= hidden_field_tag :rating, '' %>
+    <span class="img1 thumb"><%= image_submit_tag( 'tdnb.png' ) %></span><span class="img2 thumb" style="display:none"><%= image_submit_tag( 'tdng.png' ) %></span>
+  <% end %>
+<% end %>
+<% content_for :custom_javascript do %>
+  <script type="text/javascript">
+    function thumbs_up_highlight( elem ){
+      var img1 = $(elem).getElementsBySelector( 'span.img1' ).first();
+      var img2 = $(elem).getElementsBySelector( 'span.img2' ).first();
+      if ( img1 != null && img2 != null ){
+        Element.hide( img1 );
+        Element.show( img2 );
+      }
+    }
+    function thumbs_up_reset( elem ){
+      var img1 = $(elem).getElementsBySelector( 'span.img1' ).first();
+      var img2 = $(elem).getElementsBySelector( 'span.img2' ).first();
+      if ( img1 != null && img2 != null ){
+        Element.hide( img2 );
+        Element.show( img1 );
+      }
+    }
+  </script>
+<% end %>

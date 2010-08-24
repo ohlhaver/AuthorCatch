@@ -1,0 +1,84 @@
+
+<% content_for :page_label do %>
+    <% mouse_over( :icon ) do |iconEventClass, iconItemClass| %>
+      <span class="page_label <%= iconEventClass -%>">
+        <%= t('search.page.title', :query => "<a>'#{ truncate( @query, 20 ) }'</a>" ) -%></span> &nbsp;
+        <%= render :partial => 'topic_form' %>
+      
+    <% end %>
+<% end %>
+
+<% form_url = @advanced ? search_results_stories_path : stories_path %>
+<% form_method = @advanced ? :post : :get %>
+<div class='news_group'>
+  <div class='news_block'>
+	<div class ='story'>
+		
+   	<% unless display_only_story_search_results? %>
+      <% if @authors.any? or @sources.any? %>
+	<h2>
+	<%= yield :page_label %></h2>
+	<div class = "source_author_results"></div>
+	<%end%>
+		<% if @authors.any?%>
+	<h2>
+	<span class="page_label"><%= t('search.page.authors', :query => "<a>'#{ truncate( @query, 20 ) }'</a>" ) -%></span>
+	
+         <% @authors.each_with_index do |author, index| %>
+          <%= link_to author.name, author_path( author ) -%><%= ',&nbsp;&nbsp; ' unless index == @authors.size - 1  %>
+      	<% end %>
+        </h2>
+		
+ 	  <% end %>
+      <% if @sources.any? %>
+	
+      <h2>
+	      <span class="page_label"><%= t('search.page.sources', :query => "<a>'#{ truncate( @query, 20 ) }'</a>" ) -%></span>
+		
+          <% @sources.each_with_index do |source, index| %>
+            <%= link_to source.name, source_path( source ) -%><%= ',&nbsp;&nbsp; ' unless index == @sources.size - 1 %>
+          <% end %>
+        </h2>
+
+      <% end %>
+	
+		
+    <% end %>
+	</div>
+		
+	<% if @stories.empty? %> 
+	<h2><span class ="about"><%= t('stories.not.found_for_query', :query => "<a>'#{ truncate( @query, 20 ) }'</a>" )%></span></h2>
+	<%else%>
+ 		<% if @authors.any? or @sources.any? %>
+			<div class = "story_results_module"></div>
+	<h2>
+		<%= render_search_preference_form( :sort_criteria, :form_url => form_url, :form_method => form_method ) %>
+      <span class="page_label"><%= t('search.page.articles', :query => "<a>'#{ truncate( @query, 20 ) }'</a>" ) -%></span>	 	
+	</h2>
+		<%else%>
+		<h2>
+			<%= render_search_preference_form( :sort_criteria, :form_url => form_url, :form_method => form_method ) %>
+	      <span class="page_label"><%= t('search.page.title', :query => "<a>'#{ truncate( @query, 20 ) }'</a>" ) -%></span>
+	 		&nbsp;
+
+		</h2>
+		
+		<%end%>
+	
+      <div class='result_filter'><%= render_filter_links( @stories.facets, form_url, form_method ) %>  </div>
+
+    <% @stories.each do |story| %>
+        <% if story.cluster && story.cluster.stories.any? %>
+		<div class='cluster'>
+          <%= render_cluster_preview( story.cluster, story ) %>
+        <% else %>
+		<div class='medium_cluster'>
+          <%= render_story_search_preview( story ) %>
+        <% end %>
+      </div>
+    <% end %>
+	
+	<% end %>
+  </div>
+</div>
+<%= render_search_pagination( @stories, :form_url => form_url, :form_method => form_method ) %>

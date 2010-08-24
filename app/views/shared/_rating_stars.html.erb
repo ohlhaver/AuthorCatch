@@ -1,0 +1,14 @@
+<% percent = ( ( average.to_f - 1 ) / 2 * 100 ).round.to_i %>
+<% percent = 0 if percent < 0 %>
+<% title = t("stars.info.#{source}", :percent => percent, :count => count.to_i) %>
+<span class='stars' title='<%= title %>'>
+<% if count.nil? || count == 0 %>
+  <%= image_tag( 'nostar.png', :title => title )*3 -%>
+<% elsif average <= 1.0 %>
+  <%= image_tag( 'star.png', :title => title ) -%><%= image_tag( 'nostar.png', :title => title )*2 %>
+<% elsif average <= 2.0 %>
+  <%= image_tag( 'star.png', :title => title )*2 -%><%= image_tag( 'nostar.png', :title => title ) %>
+<% else %>
+  <%= image_tag( 'star.png', :title => title )*3 -%>
+<% end %>
+</span>
