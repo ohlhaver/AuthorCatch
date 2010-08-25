@@ -16,51 +16,14 @@ class HomeController < ApplicationController
   end
   
   def index
-    params_options = { 
-      :user_id => current_user.id, :page => params[:page], 
-      :language_id => news_edition.language_id, :region_id => news_edition.region_id,
-      :cluster_group_id => 136, :per_page => params[:per_page] 
-    }
     @page_data.add do |multi_curb|
-      JAPI::ClusterGroup.async_find( :one, :multi_curb => multi_curb, :params => params_options ) do |section|
-        @section = section
-      end
-    end
-    
-    params_options = { 
-      :user_id => current_user.id, :page => params[:page], 
-      :language_id => news_edition.language_id, :region_id => news_edition.region_id,
-      :cluster_group_id => 232, :per_page => params[:per_page] 
-    }
-    @page_data.add do |multi_curb|
-      JAPI::ClusterGroup.async_find( :one, :multi_curb => multi_curb, :params => params_options ) do |section|
-        @sectionen = section
-      end
-    end
-    
-    
-    page_data_finalize
-    
-    
-    
-    #if current_user.new_record?
-    #  redirect_to :action => :whats
-    #  return false
-    #end
-    #return list if params[:list] == '1'
-    @page_data.add do |multi_curb|
-      req_params =  { :author_ids => 'all', :user_id => current_user.id, :page => params[:page] || '1' }
-      req_params[:per_page] = params[:per_page] if params[:per_page]
-      JAPI::Story.async_find( :all, :multi_curb => multi_curb, :params => req_params, :from => :authors) do |result|
-        @stories= result
-        @stories = @stories.find_all{|s| Time.new - s.created_at < 86400 }
-        
+      req_params =  { :author_ids => 'mixed', :user_id => current_user.id, :page => 1 }
+      req_params.merge!( :language_id => JAPI::PreferenceOption.language_id( I18n.locale ) ) unless I18n.locale == 'de'
+      JAPI::Story.async_find( :all, :multi_curb => multi_curb, :params => req_params, :from => :authors ) do |result|
+        @stories = result
       end
     end
     page_data_finalize
-    #render :action => :my_author_stories
-      @stories = @stories + @section.stories + @sectionen.stories
-      @stories = @stories.sort_by {|u| - u.id } 
   end
   
   protected

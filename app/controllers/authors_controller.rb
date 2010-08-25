@@ -44,12 +44,14 @@ class AuthorsController < ApplicationController
   
   def top
     @page_data.add do |multi_curb|
-      JAPI::Author.async_find( :all, :multi_curb => multi_curb, :params => { :top => 1, :page => params[:page] || '1' } ) do |result|
-        @authors = result
+      req_params =  { :author_ids => 'top', :user_id => current_user.id, :page => params[:page] || '1' }
+      req_params.merge!( :language_id => JAPI::PreferenceOption.language_id( I18n.locale ) ) unless I18n.locale == 'de'
+      req_params[:per_page] = params[:per_page] if params[:per_page]
+      JAPI::Story.async_find( :all, :multi_curb => multi_curb, :params => req_params, :from => :authors) do |result|
+        @stories= result
       end
     end
     page_data_finalize
-    render :action => :index
   end
   
   # display list of subscribed author stories

@@ -1,8 +1,8 @@
 class StoriesController < ApplicationController
   
   japi_connect_login_optional :skip => [ :rss ] do
-    caches_action :rss, :cache_path => Proc.new{ |c| c.send(:rss_cache_key) }, :expires_in => 5.minutes
-    caches_action :show, :cache_path => Proc.new{ |c| c.send(:action_cache_key) }, :expires_in => 24.hours, :if => Proc.new{ |c| c.send(:current_user).new_record? && c.send(:web_spider?) }
+    #caches_action :rss, :cache_path => Proc.new{ |c| c.send(:rss_cache_key) }, :expires_in => 5.minutes
+    #caches_action :show, :cache_path => Proc.new{ |c| c.send(:action_cache_key) }, :expires_in => 24.hours, :if => Proc.new{ |c| c.send(:current_user).new_record? && c.send(:web_spider?) }
   end
   
   def show
@@ -33,7 +33,8 @@ class StoriesController < ApplicationController
     params_options.merge!( :page => params[:page], :per_page => params[:per_page], @filter => 4 )
     params_options[:user_id] = current_user.id unless current_user.new_record?
     params_options[:language_id] ||= params[:l] unless params[:l].blank?
-    params_options[:language_id] ||= news_edition.language_id if current_user.new_record?
+    params_options[:language_id ] ||= JAPI::PreferenceOption.language_id( I18n.locale ) unless I18n.locale == 'de'
+    #params_options[:language_id] ||= news_edition.language_id if current_user.new_record?
     params_options[:time_span] = params[:ts] unless params[:ts].blank?
     @rss_url = search_rss_url( :edition => session[:edition], :locale => I18n.locale, :oq => obfuscate_encode( params_options.merge( :page => nil ) ), :mode => :simple )
     @page_data.add do |multi_curb|

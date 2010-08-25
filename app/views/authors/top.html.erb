@@ -1,0 +1,17 @@
+<div class='news_group'>
+  <div class='news_block'>
+    <h2>
+      <span class="page_label"> <%= t('navigation.main.opinions') %> </span>  
+    </h2>
+    <% @stories.each do |story| %>
+      <div class='medium_cluster'>
+        <div class='headline'><%= render_story_search_preview( story ) %></div>
+      </div>
+    <% end %>
+    <% if @stories.empty? %>
+      <br>
+      <h2><span class = "about"><%= t('stories.not.found')%></span></h2>
+    <% end %>
+  </div>
+</div>
+<%= render_pagination( @stories ) %>
