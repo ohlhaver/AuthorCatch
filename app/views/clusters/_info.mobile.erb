@@ -1,4 +1,4 @@
-<% cache "cluster-mobi/#{cluster.id}-info", :expires_in => 1.hour do -%>
+<% cache "cluster-mobi/#{cluster.id}-info-#{I18n.locale}-v01-ac", :expires_in => 1.hour do -%>
 <%= link_to( t( 'cluster.all.headlines', :count => cluster.story_count ), cluster_path( cluster.to_param ) ) %>
 <% if cluster.video_count > 0 %>
   - <%= link_to( t( 'cluster.all.videos', :count => cluster.video_count ), cluster_path( :id => cluster.to_param, :video => '1' ) ) %>

@@ -1,4 +1,4 @@
-<% erb_cache "stories/preview/#{story.id}-#{I18n.locale}-v10", { :locals => { :expires_in => 24.hours, :story => story, :hide_add_to_reading_list => hide_add_to_reading_list } } do %>
+<% erb_cache "stories/preview/#{story.id}-#{I18n.locale}-v01-ac", { :locals => { :expires_in => 24.hours, :story => story, :hide_add_to_reading_list => hide_add_to_reading_list } } do %>
 <%% if hide_add_to_reading_list %>
   <span class='title'>
    <%= story_symbol( story ) %> <%= link_to( story.title, story_path( story ), :onclick => js_related_links_fragments, :rel => 'nofollow' ) %> 

@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   before_filter :store_referer_location, :only => [ :rate, :subscribe, :unsubscribe, :hide, :up, :down ]
   
   japi_connect_login_required :except => [ :show, :top, :whats, :page, :my, :index ] do
-    caches_action :show, :cache_path => Proc.new{ |c| c.send(:action_cache_key) }, :expires_in => 5.minutes, :if => Proc.new{ |c| c.send( :current_user ).new_record? }
+    #caches_action :show, :cache_path => Proc.new{ |c| c.send(:action_cache_key) }, :expires_in => 5.minutes, :if => Proc.new{ |c| c.send( :current_user ).new_record? }
   end
   
   before_filter :correct_param_id
