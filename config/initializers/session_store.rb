@@ -6,9 +6,9 @@
 # no regular words or you'll be exposed to dictionary attacks.
 
 ActionController::Base.session = {
-  :domain       => ( RAILS_ENV != 'production' ? nil : '.jurnalo.com' ),
-  :key          => '_js1',
-  :secret       => 'fed8479e43a7a897aa6ca18df2dcb9afae22dfde17adbe054f15e8736a23bcdad5002994041494eec5e9d6c4ac9fe38f4ee26fbfa71baa9348f94ac8a5e403e2',
+  :domain       => ( RAILS_ENV != 'production' ? nil : '.authorcatch.com' ),
+  :key          => '_af',
+  :secret       => 'e9288eecc6d3b1ac534cdb05c3b45bb234a5fb1241bd5d510e1df2229874c42fdf9874e5f726c80379abfabfdc65b58929129b2cae14a0c936f0f5d5939a64b5',
   :expire_after => 30.days
 }
 
