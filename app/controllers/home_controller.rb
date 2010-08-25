@@ -18,7 +18,7 @@ class HomeController < ApplicationController
   def index
     @page_data.add do |multi_curb|
       req_params =  { :author_ids => 'mixed', :user_id => current_user.id, :page => 1 }
-      req_params.merge!( :language_id => JAPI::PreferenceOption.language_id( I18n.locale ) ) unless I18n.locale == 'de'
+      req_params.merge!( :language_id => JAPI::PreferenceOption.language_id( I18n.locale ) ) unless I18n.locale.to_s == 'de'
       JAPI::Story.async_find( :all, :multi_curb => multi_curb, :params => req_params, :from => :authors ) do |result|
         @stories = result
       end

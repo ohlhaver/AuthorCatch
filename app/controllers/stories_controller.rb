@@ -33,7 +33,7 @@ class StoriesController < ApplicationController
     params_options.merge!( :page => params[:page], :per_page => params[:per_page], @filter => 4 )
     params_options[:user_id] = current_user.id unless current_user.new_record?
     params_options[:language_id] ||= params[:l] unless params[:l].blank?
-    params_options[:language_id ] ||= JAPI::PreferenceOption.language_id( I18n.locale ) unless I18n.locale == 'de'
+    params_options[:language_id ] ||= JAPI::PreferenceOption.language_id( I18n.locale ) unless I18n.locale.to_s == 'de'
     #params_options[:language_id] ||= news_edition.language_id if current_user.new_record?
     params_options[:time_span] = params[:ts] unless params[:ts].blank?
     @rss_url = search_rss_url( :edition => session[:edition], :locale => I18n.locale, :oq => obfuscate_encode( params_options.merge( :page => nil ) ), :mode => :simple )
