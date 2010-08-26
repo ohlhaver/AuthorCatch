@@ -15,6 +15,17 @@ class AuthorsController < ApplicationController
     @page_title = "Jurnalo - #{t('authors.what.label')}"
   end
   
+  def toplist
+    @page_data.add do |multi_curb|
+      JAPI::Author.async_find( :all, :multi_curb => multi_curb, :params => { :top => 1, :page => params[:page] || '1' } ) do |result|
+        @authors = result
+      end
+    end
+    page_data_finalize
+    render :action => :index
+  end
+  
+  
   def page
     @author = JAPI::Author.find( params[:id] )
     if @author && !web_spider?
@@ -56,10 +67,10 @@ class AuthorsController < ApplicationController
   
   # display list of subscribed author stories
   def my
-    #if current_user.new_record?
-    #  redirect_to :action => :whats
-    #  return false
-    #end
+    if current_user.new_record?
+      toplist
+      return false
+    end
     return list if params[:list] == '1'
     @page_data.add do |multi_curb|
       req_params =  { :author_ids => 'all', :user_id => current_user.id, :page => params[:page] || '1' }
@@ -76,8 +87,8 @@ class AuthorsController < ApplicationController
   # display list of authors
   def list
     params_options = { :page => params[:page] || 1, :per_page => params[:per_page], :user_id => current_user.id }
-    params_options[:scope] = :fav if @author_filter == :subscribed
-    params_options[:scope] = :pref if @author_filter == :rated
+    params_options[:scope] = :fav #if @author_filter == :subscribed
+    #params_options[:scope] = :pref if @author_filter == :rated
     @page_data.add do |multi_curb|
       JAPI::AuthorPreference.async_find( :all, :multi_curb => multi_curb, :params => params_options ){ |results| @author_prefs = results }
     end

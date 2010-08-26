@@ -86,8 +86,8 @@ en:
       you_can: "With AuthorCatch you can"
       browse_news: "browse the news"
       search_news: "search the news"
-      subscribe_author: "subscribe to any author"
-      weight: "weight authors and sources"
+      subscribe_author: "follow you favourite authors"
+      weight: "dicover new authors"
       create_topic: "create your own topics"
       add_to_reading_list: "save interesting articles to your reading list"
       topics: "Jurnalo's selection of topics on the homepage is fully automated.<br> It shows which news topics have been covered by the greatest number of different publications over the last 12 hours and is updated every minute."
@@ -145,14 +145,14 @@ en:
       by_you: "You don't prefer articles by this author."
     action:
       subscribe: 'catch'
-      unsubscribe: 'uncatch'
+      unsubscribe: 'drop'
       search_here: 'Find authors here!'
     not:
       found: "Author not found."
     stories:
       label: "Headlines"
     list:
-      label: "List of Authors"
+      label: "List of my authors"
     filter:
       all: 'All'
       subscribed: 'Subscribed'
@@ -217,7 +217,7 @@ en:
       sport: "Sport"
       technology: "Technology"
       top_stories: "Top Stories"
-      top_authors: "Top Authors"
+      top_authors: "Suggestions"
     top:
       help: "Help"
       login: "Login"

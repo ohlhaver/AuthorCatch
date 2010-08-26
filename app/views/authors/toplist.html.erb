@@ -3,12 +3,12 @@
     <h2>
       <span class="page_label"><%= t('navigation.main.top_authors') %> </span></h2>
       <br>
-	<div class = "author">
+<div class = "author">
       <% @authors.each do |author| %>
         
-        <%= render_author_preview( author ) %>&nbsp;
+         <%= render_author_preview( author ) %> &nbsp;
       <% end %>
-	</div>
+</div>
       
       <% if @authors.empty? %>
         <em><%= t( 'authors.not.found' ) %></em>

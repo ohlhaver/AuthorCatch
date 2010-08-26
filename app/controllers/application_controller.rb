@@ -91,7 +91,7 @@ class ApplicationController < ActionController::Base
   end
   
   def prepare_for_mobile
-    request.format = :mobile if mobile_device?
+    #request.format = :mobile if mobile_device?
   end
   
   def set_facebook_login_url

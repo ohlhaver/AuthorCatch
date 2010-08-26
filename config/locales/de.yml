@@ -86,8 +86,8 @@ de:
       you_can: "Mit AuthorCatch können Sie"
       browse_news: "in den Nachrichten blättern"
       search_news: "Nachrichten suchen"
-      subscribe_author: "Autoren abonnieren"
-      weight: "Autoren und Quellen gewichten"
+      subscribe_author: "Jeden neuen Artikel von Ihren Lieblingsautoren erhalten"
+      weight: "Neue gute Autoren kennenlernen"
       create_topic: "eigene Themen erschaffen"
       add_to_reading_list: "interessante Artikel zu Ihrer Leseliste speichern"
       topics: "AuthorCatchs Auswahl von Themen geschieht vollkommen automatisch. <br> Sie zeigt zu welchen Nachrichten die meisten Publikationen in den letzten 12 Stunden etwas veröffentlicht haben und wird jede Minute aktualisiert."
@@ -145,14 +145,14 @@ de:
       by_you: "Sie bevorzugen diesen Autor nicht."
     action:
       subscribe: 'catch'
-      unsubscribe: 'uncatch'
+      unsubscribe: 'drop'
       search_here: 'Hier Autoren finden!'
     not:
       found: "Autor nicht gefunden"
     stories:
       label: "Artikel"
     list:
-      label: "Liste der Autoren"
+      label: "Liste meiner Autoren"
     filter:
       all: 'Alle'
       subscribed: 'abonniert'
@@ -217,7 +217,7 @@ de:
       sport: "Sport"
       technology: "Technik"
       top_stories: "Schlagzeilen"
-      top_authors: "Top Autoren"
+      top_authors: "Vorschläge"
     top:
       help: "Hilfe"
       login: "Einloggen"

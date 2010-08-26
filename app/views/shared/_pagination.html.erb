@@ -16,9 +16,9 @@
   <span class='next'><%= link_to_page( t('pagination.next'), pagination.next_page ) %></span>
 </div>
 
-<div class='per_page ta_center'>
+<!--><div class='per_page ta_center'>
     <% form_tag( url_for(:controller => :preferences, :action => :set_per_page ), :method => :get, :id => :per_page_form ) do %>
       <% #page_params( :exclude => 'per_page' ).collect{ |param| hidden_field_tag( param, params[param] ) }.join('') %>
       <%= t( 'search.results.per_page', :count => select_tag( 'id', options_for_select( per_page_options, per_page ) ) ) %>
     <% end %>
-</div>
+</div>-->
