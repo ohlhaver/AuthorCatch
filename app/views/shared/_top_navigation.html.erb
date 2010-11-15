@@ -1,8 +1,10 @@
 <% content_for :user_actions do -%>	
   <% if logged_in? -%>
-    <%= link_to( t( 'navigation.top.logout', :name => current_user.name ), logout_path ) %> 
+    <%= link_to( t( 'navigation.top.logout', :name => current_user.name ), logout_path ) %> <br>
+	<%= link_to t('author.list.label'), my_authors_path( :list => 1 )%> <br>
+	<%= link_to_navigation_item t('navigation.main.top_authors'), :controller => 'home', :action => 'index' %>
   <% else -%>
-    <%= link_to( t( 'navigation.top.login' ), login_path ) -%>
+   <a class="fb_button fb_button_small" rel="nofollow" onclick="facebook_onlogin();return false" href="<%= @facebook_login_url %>" ><span class="fb_button_text"><%= t('jurnalo.login.fb_button') %></span></a>
   <% end %>
 <% end %>
 

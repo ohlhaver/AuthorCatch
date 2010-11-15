@@ -27,9 +27,9 @@
     <%= stylesheet_link_tag 'simple', 'fb', :cache => 'base_app' %>
   </head>
   <body>
-    <div class="container_10">
-      <div id= "top_frame" class = "grid_8">
-        <%= link_to '<b>AuthorCatch</b>', root_path %>
+    <div class="container_8">
+      <div id= "top_frame" class = "grid_6">
+       <%= link_to( image_tag( 'logo.gif'), root_path, {:title => "Home"} ) %>
         <% form_tag( stories_path, :id => 'search_form', :method => :get, :class => 'inline_form' ) do -%>
           <input type="text" title="Search News" autocomplete="off" tabindex="1" name="q" id = 'searchfield' class ="text"  value="<%= params[:q] -%>" />
           <input type="submit" value="<%= t( 'search.simple' ) -%>" tabindex="2" id = 'searchbutton' class ="button"/>
@@ -42,10 +42,10 @@
       </div>
       <br clear="all" /> <div class="clearfix"></div>
       <% if flash[:notice] %>
-        <div class="flash grid_10" style="color:green" ><%= flash[:notice] %></div>
+        <div class="flash grid_8" style="color:green" ><%= flash[:notice] %></div>
       <% end %>
       <% if flash[:error] %>
-        <div class="flash grid_10" style="color: red"><%= flash[:error] %></div>
+        <div class="flash grid_8" style="color: red"><%= flash[:error] %></div>
       <% end %>
       <div id="content" class="grid_8">
 
@@ -54,20 +54,9 @@
         <%= yield %>
         <%= content_block_clearfix %>
       </div>
-      <div id="module" class="grid_2">
-        <div id='home_link' >
-          <%= link_to_navigation_item 'Home', root_path %> &nbsp;
-        </div>
-        <div id="navigation" >
-        <% if @skyscraper == false or @skyscraper == true %> 
-          <%= render :partial => 'shared/navigation' %>
-        <%else%>
-          <%= render :partial => 'shared/skyscraper' %>
-        <%end%>
-        </div>
-      </div>
+      
 
-      <div id="footer" class = "grid_10">
+      <div id="footer" class = "grid_8">
         <%= render :partial => 'shared/footer' %>
       </div>
       <%= javascript_include_tag 'prototype', 'effects', 'controls', 'application', :cache => 'jbase' %>

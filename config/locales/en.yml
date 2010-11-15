@@ -82,8 +82,8 @@ en:
     login:
       fb_button: "Login"
     about:
-      label: "About AuthorCatch"
-      you_can: "With AuthorCatch you can"
+      label: "About Jurnalo"
+      you_can: "With Jurnalo you can"
       browse_news: "browse the news"
       search_news: "search the news"
       subscribe_author: "follow you favourite authors"
@@ -105,9 +105,9 @@ en:
       disclaimer: "Disclaimer: <br> We are not responsible for the content of any external links.<br> The responsiblity for any of the content of any of the pages we are linking to belongs exclusively to the owners of the pages we are linking to."
     privacy:
       label: "Privacy policy"
-      collects: "AuthorCatch collects personal information when you register or when you provide such information voluntarily."
-      cookies: "We use cookies and other technologies to find out how you use AuthorCatch."
-      accesses: "AuthorCatch accesses information automatically when you visit our site. This information includes URL, IP-address, browser-type, language as well as date and time of your visit."
+      collects: "Jurnalo collects personal information when you register or when you provide such information voluntarily."
+      cookies: "We use cookies and other technologies to find out how you use Jurnalo."
+      accesses: "Jurnalo accesses information automatically when you visit our site. This information includes URL, IP-address, browser-type, language as well as date and time of your visit."
       dont_passes: "We don't pass on personal information to any third party without your explicit approval."
       summarizes: "Only summarized de-personalized information is provided to third parties."
       uses: "Personal information is used for providing services requested by the user including services with personalized content."
@@ -127,9 +127,9 @@ en:
       reason_2: "To rate more than one source please upgrade to the Jurnalo Power Account."
       reason_3: "To rate/subscribe to more than one author please upgrade to the Jurnalo Power Account."
     wizard:
-      title: 'New to AuthorCatch?'
+      title: 'New to Jurnalo?'
       create_topic: "Create your first personal topic now with Jurnalo!"
-      subscribe_author: "Catch all articles by your favorite authors!"
+      subscribe_author: "Follow your favorite authors!"
       rate_source: "Rate your first news publication now with Jurnalo!"
       reading_list: "Save interesting articles to your reading list now with Jurnalo!"
       whats_that: "What's that?"
@@ -144,7 +144,7 @@ en:
       info: "Don't prefer articles by this author"
       by_you: "You don't prefer articles by this author."
     action:
-      subscribe: 'catch'
+      subscribe: 'follow'
       unsubscribe: 'drop'
       search_here: 'Find authors here!'
     not:
@@ -155,16 +155,16 @@ en:
       label: "List of my authors"
     filter:
       all: 'All'
-      subscribed: 'Subscribed'
+      subscribed: 'Following'
       rated: 'Weighted'
   authors:
     what:
-      label: "Start catching your favourite authors!"
+      label: "Start following your favourite authors!"
     subscribe:
       why: "Track all your favorite authors' new articles from any publication."
-      howto: "How to <b>catch</b> an author:"
+      howto: "How to <b>follow</b> an author:"
       step_1: "Click the name of any author."
-      step_2: "Click <b>'catch'</b> next to the authors name!"
+      step_2: "Click <b>'follow'</b> next to the authors name!"
     search:
       label: "Search author"
       info: "Search for your favourite authors:"
@@ -195,7 +195,7 @@ en:
     other: "other news edition"
   navigation:
     bottom:
-      about: "About AuthorCatch"
+      about: "About Jurnalo"
       feedback: "Feedback"
       imprint: "Imprint"
       privacy: "Privacy"
@@ -358,15 +358,15 @@ en:
         found_for_query: "No articles found for {{query}}."
   seo:
     page:
-      default_title: "AuthorCatch - Catch your favourite authors!"
+      default_title: "Jurnalo - Follow your favourite authors!"
       title:
-        author: "Articles by {{name}} - AuthorCatch"
-        cluster_group: "{{name}} - AuthorCatch"
-        my_author: "My Authors - AuthorCatch"
-        opinions: "Opinions on {{query}} - AuthorCatch"
-        reading_list: "Reading list - AuthorCatch"
-        search: "{{query}} - AuthorCatch"
-        videos: "Videos on {{query}} - AuthorCatch"
+        author: "Articles by {{name}} - Jurnalo"
+        cluster_group: "{{name}} - Jurnalo"
+        my_author: "My Authors - Jurnalo"
+        opinions: "Opinions on {{query}} - Jurnalo"
+        reading_list: "Reading list - Jurnalo"
+        search: "{{query}} - Jurnalo"
+        videos: "Videos on {{query}} - Jurnalo"
   reading_list:
     what:
       label: 'Save articles to your reading list'

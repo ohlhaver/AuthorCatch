@@ -39,7 +39,7 @@ img {
 #searchfield {
 
 	margin-left :12px;
-	margin-top : 0px;
+	margin-top : -24px;
 	font-family: Georgia,"Times New Roman",Times,serif;
 	font-weight: normal;
 	text-decoration:none;
@@ -57,7 +57,7 @@ img {
 
 #searchbutton {
 		margin-left: 2px;
-		margin-top : 0px;
+		margin-top : -24px;
 		font-family: Arial,Helvetica,sans-serif;
 		font-weight: normal;
 		text-decoration:none;

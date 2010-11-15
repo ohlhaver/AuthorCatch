@@ -82,15 +82,15 @@ de:
     login:
       fb_button: "Anmelden"
     about:
-      label: "Über AuthorCatch"
-      you_can: "Mit AuthorCatch können Sie"
+      label: "Über Jurnalo"
+      you_can: "Mit Jurnalo können Sie"
       browse_news: "in den Nachrichten blättern"
       search_news: "Nachrichten suchen"
       subscribe_author: "Jeden neuen Artikel von Ihren Lieblingsautoren erhalten"
       weight: "Neue gute Autoren kennenlernen"
       create_topic: "eigene Themen erschaffen"
       add_to_reading_list: "interessante Artikel zu Ihrer Leseliste speichern"
-      topics: "AuthorCatchs Auswahl von Themen geschieht vollkommen automatisch. <br> Sie zeigt zu welchen Nachrichten die meisten Publikationen in den letzten 12 Stunden etwas veröffentlicht haben und wird jede Minute aktualisiert."
+      topics: "Jurnalos Auswahl von Themen geschieht vollkommen automatisch. <br> Sie zeigt zu welchen Nachrichten die meisten Publikationen in den letzten 12 Stunden etwas veröffentlicht haben und wird jede Minute aktualisiert."
       ranking: "Das Ranking der Artikel in den Suchergebnissen basiert ausschließlich auf der Kombination aus Relevanz, Aktualität und automatisch geschätzter journalistischer Qualität."
       selection: "Für die Auswahl und Gewichtung der Quellen ist deren objektiv errechnete journalistische Qualität das ausschließliche Kriterium."
       credits: "Dank gilt insbesondere den folgenden Personen, ohne deren open-source Beiträge diese Seite nicht möglich wäre"
@@ -105,9 +105,9 @@ de:
       disclaimer: "Haftungshinweis: <br> Wir übernehmen keine Haftung für die Inhalte externer Links.<br> Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
     privacy:
       label: "Datenschutz"
-      collects: "AuthorCatch sammelt persönliche Informationen, wenn Sie sich registrieren oder anderweitig derartige Informationen freiwillig bereitstellen."
-      cookies: "Wir verwenden Cookies und andere Technologien, um zu erfahren, wie Sie AuthorCatch nutzen."
-      accesses: "AuthorCatch erfasst Informationen automatisch, wenn Sie unsere Website aufrufen. Diese Informationen umfassen unter anderem URL, IP-Adresse, Browserart, Sprache sowie das Datum und die Uhrzeit Ihrer Anfrage."
+      collects: "Jurnalo sammelt persönliche Informationen, wenn Sie sich registrieren oder anderweitig derartige Informationen freiwillig bereitstellen."
+      cookies: "Wir verwenden Cookies und andere Technologien, um zu erfahren, wie Sie Jurnalo nutzen."
+      accesses: "Jurnalo erfasst Informationen automatisch, wenn Sie unsere Website aufrufen. Diese Informationen umfassen unter anderem URL, IP-Adresse, Browserart, Sprache sowie das Datum und die Uhrzeit Ihrer Anfrage."
       dont_passes: "Wir geben keine persönlichen Informationen an Dritte weiter."
       summarizes: "Nur zusammengefasste entpersonalisierte Informationen werden an Dritte weitergegeben."
       uses: "Die persönlichen Informationen werden für die Bereitstellung von gewünschten Dienstleistungen, einschließlich der Dienstleistungen mit angepassten Inhalten, verwendet."
@@ -144,8 +144,8 @@ de:
       info: "Artikel dieses Autors nicht bevorzugen"
       by_you: "Sie bevorzugen diesen Autor nicht."
     action:
-      subscribe: 'catch'
-      unsubscribe: 'drop'
+      subscribe: 'folgen'
+      unsubscribe: 'entfolgen'
       search_here: 'Hier Autoren finden!'
     not:
       found: "Autor nicht gefunden"
@@ -159,12 +159,12 @@ de:
       rated: 'gewichtet'
   authors:
     what:
-      label: "Autoren Abonnieren"
+      label: "Autoren folgen"
     subscribe:
       why: "Erhalten Sie jeden neuen Artikel von Ihren Lieblingautoren,<br> egal aus welcher Nachrichten-Quelle."
       howto: "Anleitung:"
       step_1: "Klicken Sie auf den Namen des Autors."
-      step_2: "Klicken Sie rechts vom Namen auf 'abonnieren'."
+      step_2: "Klicken Sie rechts vom Namen auf 'folgen'."
     search:
       label: "Autoren Suche"
       info: "Suchen Sie jetzt nach einem Lieblings-Autor:"
@@ -195,7 +195,7 @@ de:
     other: "Andere Nachrichtenausgaben"
   navigation:
     bottom:
-      about: "Über AuthorCatch"
+      about: "Über Jurnalo"
       feedback: "Feedback"
       imprint: "Impressum"
       privacy: "Datenschutz"
@@ -347,7 +347,7 @@ de:
       what: "Sie können jeder Publikation eine der folgenden Gewichtungen geben:"
       values: "'nicht gewichtet', 'ignorieren', 'niedrig', 'mittel', oder 'hoch'"
       personalized_results: "Diese Gewichtung entscheidet über das Ranking Ihrer Suchergebnisse."
-      not_rated_info: "Wenn Sie 'nicht gewichtet' wählen, dann gilt die Default-Gewichtung. Diese richtet sich nach der durchschnittlichen Gewichtung durch alle AuthorCatch Nutzer."
+      not_rated_info: "Wenn Sie 'nicht gewichtet' wählen, dann gilt die Default-Gewichtung. Diese richtet sich nach der durchschnittlichen Gewichtung durch alle Jurnalo Nutzer."
       rated_sources: "Unter 'Einstellungen > meine Quellen' sehen Sie eine Liste aller Quellen, denen Sie bereits eine Gewichtung gegeben haben."
     not:
       found: "Quelle nicht gefunden."
@@ -358,15 +358,15 @@ de:
       found_for_query: "Keine Artikel zu {{query}} gefunden."
   seo:
     page:
-      default_title: "AuthorCatch - Fange Deine Lieblingsautoren!"
+      default_title: "Jurnalo - Folge Deinen Lieblingsautoren!"
       title:
-        author: "Artikel von {{name}} - AuthorCatch"
-        cluster_group: "{{name}} - AuthorCatch"
-        my_author: "Meine Autoren - AuthorCatch"
-        opinions: "Meinungen zu {{query}} - AuthorCatch"
-        reading_list: "Leseliste - AuthorCatch"
-        search: "{{query}} - AuthorCatch"
-        videos: "Videos zu {{query}} - AuthorCatch"
+        author: "Artikel von {{name}} - Jurnalo"
+        cluster_group: "{{name}} - Jurnalo"
+        my_author: "Meine Autoren - Jurnalo"
+        opinions: "Meinungen zu {{query}} - Jurnalo"
+        reading_list: "Leseliste - Jurnalo"
+        search: "{{query}} - Jurnalo"
+        videos: "Videos zu {{query}} - Jurnalo"
   reading_list:
     what:
       label: 'Artikel zur Leseliste Speichern'

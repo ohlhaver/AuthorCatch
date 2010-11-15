@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.search_rss '/stories/:edition/:locale/:mode/:oq.rss', :controller => 'stories', :action => 'rss', :format => 'rss'
   map.section_rss '/sections/:locale/:oq.rss', :controller => 'sections', :action => 'rss', :format => 'rss'
   map.topic_rss '/topics/:locale/:oq.rss', :controller => 'topics', :action => 'rss', :format => 'rss'
-  map.root :controller => 'home', :action => 'index'
+  map.root :controller => 'authors', :action => 'my'
   map.connect '/sections/create', :controller => 'sections', :action => :create
   map.resources :sections, :member => [ :up, :down, :hide ]
   map.resources :clusters
