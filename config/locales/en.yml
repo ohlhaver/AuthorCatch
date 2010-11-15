@@ -144,7 +144,7 @@ en:
       info: "Don't prefer articles by this author"
       by_you: "You don't prefer articles by this author."
     action:
-      subscribe: 'follow'
+      subscribe: 'follow this author'
       unsubscribe: 'drop'
       search_here: 'Find authors here!'
     not:

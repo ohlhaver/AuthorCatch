@@ -6,12 +6,7 @@
       <span class='author fs80 <%= iconEventClass -%>'>
         <%= link_to( author.name, author_path( author ) ) -%>
         <!-- google_ad_section_start(weight=ignore) -->
-        <% mouse_over(:menu) do | menuEventClass, menuItemClass | %>
-          <span class='<%= iconItemClass -%> <%= menuEventClass -%>'>
-            <%= link_to( image_tag( 'plus.gif', :title => t('author.action.subscribe') ), subscribe_author_path( author ), :method => :put ) %>
-            <!-- div class='<%= menuItemClass -%> actionsBox'></div -->
-          </span>
-        <% end %>
+
         <!-- google_ad_section_end -->
       </span>
     <% end -%>

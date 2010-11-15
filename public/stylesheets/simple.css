@@ -211,7 +211,8 @@ span.current{
 }
 
 .wizzard_text {
-	font-size: 20px;
+	font-size: 21px;
+	font-family: Arial,Helvetica,sans-serif;
 }
 
 #wizzard_searchfield {
@@ -1176,9 +1177,14 @@ line-height: 0px;
 color: #FFFFFF;
 background-color: #DDDDDD;
 vertical-align: middle;
-height: 36px;
+height: 19px;
 width: 1;
 border: 0px;
 padding: 4px;
+
+}
+
+.fb_button {
+	float: right;
 }
 

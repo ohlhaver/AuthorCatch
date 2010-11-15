@@ -18,7 +18,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.jurnalo.com/" />
     <meta property="og:image" content="http://www.jurnalo.com/images/logo.gif" />
-    <meta property="og:description" content="Blättere in allen Nachrichten!."/>
+    <meta property="og:description" content="Follow your favourite authors!."/>
     <meta property="fb:admins" content="ohlhaver"/>
     <!--[if !lte IE 8]><![IGNORE[--><![IGNORE[]]><%= stylesheet_link_tag 'reset', 'grid10', 'grid10ff', :cache => 'base_g10' %><!--<![endif]-->
     <!--[if lte IE 8]>
@@ -49,7 +49,6 @@
       <% end %>
       <div id="content" class="grid_8">
 
-	  <%= show_wizard( :author ) %>
 
         <%= yield %>
         <%= content_block_clearfix %>

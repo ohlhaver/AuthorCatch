@@ -144,7 +144,7 @@ de:
       info: "Artikel dieses Autors nicht bevorzugen"
       by_you: "Sie bevorzugen diesen Autor nicht."
     action:
-      subscribe: 'folgen'
+      subscribe: 'diesem Autor folgen'
       unsubscribe: 'entfolgen'
       search_here: 'Hier Autoren finden!'
     not:

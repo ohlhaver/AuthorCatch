@@ -8,12 +8,12 @@ class StoriesController < ApplicationController
   def show
     @story = JAPI::Story.find( params[:id] )
     if @story && !web_spider?
-      if mobile_device?
+      #if mobile_device?
         redirect_to @story.url
-      else
-        set_related_stories
-        render :action => :show, :layout => false
-      end
+      #else
+      #  set_related_stories
+      #  render :action => :show, :layout => false
+      #end
     else
       render :text => %Q(<html><head>
         <meta property="og:title" content="#{@story.try(:title) || 'Story Not Found'}"/>
