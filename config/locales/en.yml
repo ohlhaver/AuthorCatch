@@ -86,7 +86,7 @@ en:
       you_can: "With Jurnalo you can"
       browse_news: "browse the news"
       search_news: "search the news"
-      subscribe_author: "follow you favourite authors"
+      subscribe_author: "follow you favorite authors"
       weight: "dicover new authors"
       create_topic: "create your own topics"
       add_to_reading_list: "save interesting articles to your reading list"
@@ -159,7 +159,7 @@ en:
       rated: 'Weighted'
   authors:
     what:
-      label: "Start following your favourite authors!"
+      label: "Start following your favorite authors!"
     subscribe:
       why: "Track all your favorite authors' new articles from any publication."
       howto: "How to <b>follow</b> an author:"
@@ -167,7 +167,7 @@ en:
       step_2: "Click <b>'follow'</b> next to the authors name!"
     search:
       label: "Search author"
-      info: "Search for your favourite authors:"
+      info: "Search for your favorite authors:"
     top_list:
       label: "List of the currently most popular authors"
       browse: "These are the most popular authors:"
@@ -358,7 +358,7 @@ en:
         found_for_query: "No articles found for {{query}}."
   seo:
     page:
-      default_title: "Jurnalo - Follow your favourite authors!"
+      default_title: "Jurnalo - Follow your favorite authors!"
       title:
         author: "Articles by {{name}} - Jurnalo"
         cluster_group: "{{name}} - Jurnalo"
